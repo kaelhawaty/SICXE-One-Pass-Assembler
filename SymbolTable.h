@@ -1,0 +1,14 @@
+//
+// Created by Karim on 5/11/2020.
+//
+
+#ifndef SICXEONEPASSASSEMBLER_SYMBOLTABLE_H
+#define SICXEONEPASSASSEMBLER_SYMBOLTABLE_H
+
+
+class SymbolTable {
+
+};
+
+
+#endif //SICXEONEPASSASSEMBLER_SYMBOLTABLE_H

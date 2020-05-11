@@ -1,0 +1,14 @@
+//
+// Created by Karim on 5/11/2020.
+//
+
+#ifndef SICXEONEPASSASSEMBLER_INTERPRETER_H
+#define SICXEONEPASSASSEMBLER_INTERPRETER_H
+
+
+class Interpreter {
+
+};
+
+
+#endif //SICXEONEPASSASSEMBLER_INTERPRETER_H

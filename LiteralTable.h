@@ -1,0 +1,14 @@
+//
+// Created by Karim on 5/11/2020.
+//
+
+#ifndef SICXEONEPASSASSEMBLER_LITERALTABLE_H
+#define SICXEONEPASSASSEMBLER_LITERALTABLE_H
+
+
+class LiteralTable {
+
+};
+
+
+#endif //SICXEONEPASSASSEMBLER_LITERALTABLE_H
