@@ -122,140 +122,167 @@ SICXEOnePassAssembler/fast:
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/build
 .PHONY : SICXEOnePassAssembler/fast
 
-Interpreter.obj: Interpreter.cpp.obj
+src/Interpreter.obj: src/Interpreter.cpp.obj
 
-.PHONY : Interpreter.obj
-
-# target to build an object file
-Interpreter.cpp.obj:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/Interpreter.cpp.obj
-.PHONY : Interpreter.cpp.obj
-
-Interpreter.i: Interpreter.cpp.i
-
-.PHONY : Interpreter.i
-
-# target to preprocess a source file
-Interpreter.cpp.i:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/Interpreter.cpp.i
-.PHONY : Interpreter.cpp.i
-
-Interpreter.s: Interpreter.cpp.s
-
-.PHONY : Interpreter.s
-
-# target to generate assembly for a file
-Interpreter.cpp.s:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/Interpreter.cpp.s
-.PHONY : Interpreter.cpp.s
-
-LiteralTable.obj: LiteralTable.cpp.obj
-
-.PHONY : LiteralTable.obj
+.PHONY : src/Interpreter.obj
 
 # target to build an object file
-LiteralTable.cpp.obj:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/LiteralTable.cpp.obj
-.PHONY : LiteralTable.cpp.obj
+src/Interpreter.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj
+.PHONY : src/Interpreter.cpp.obj
 
-LiteralTable.i: LiteralTable.cpp.i
+src/Interpreter.i: src/Interpreter.cpp.i
 
-.PHONY : LiteralTable.i
+.PHONY : src/Interpreter.i
 
 # target to preprocess a source file
-LiteralTable.cpp.i:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/LiteralTable.cpp.i
-.PHONY : LiteralTable.cpp.i
+src/Interpreter.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.i
+.PHONY : src/Interpreter.cpp.i
 
-LiteralTable.s: LiteralTable.cpp.s
+src/Interpreter.s: src/Interpreter.cpp.s
 
-.PHONY : LiteralTable.s
+.PHONY : src/Interpreter.s
 
 # target to generate assembly for a file
-LiteralTable.cpp.s:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/LiteralTable.cpp.s
-.PHONY : LiteralTable.cpp.s
+src/Interpreter.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.s
+.PHONY : src/Interpreter.cpp.s
 
-Parser.obj: Parser.cpp.obj
+src/LiteralTable.obj: src/LiteralTable.cpp.obj
 
-.PHONY : Parser.obj
+.PHONY : src/LiteralTable.obj
 
 # target to build an object file
-Parser.cpp.obj:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/Parser.cpp.obj
-.PHONY : Parser.cpp.obj
+src/LiteralTable.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj
+.PHONY : src/LiteralTable.cpp.obj
 
-Parser.i: Parser.cpp.i
+src/LiteralTable.i: src/LiteralTable.cpp.i
 
-.PHONY : Parser.i
+.PHONY : src/LiteralTable.i
 
 # target to preprocess a source file
-Parser.cpp.i:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/Parser.cpp.i
-.PHONY : Parser.cpp.i
+src/LiteralTable.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.i
+.PHONY : src/LiteralTable.cpp.i
 
-Parser.s: Parser.cpp.s
+src/LiteralTable.s: src/LiteralTable.cpp.s
 
-.PHONY : Parser.s
+.PHONY : src/LiteralTable.s
 
 # target to generate assembly for a file
-Parser.cpp.s:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/Parser.cpp.s
-.PHONY : Parser.cpp.s
+src/LiteralTable.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.s
+.PHONY : src/LiteralTable.cpp.s
 
-SymbolTable.obj: SymbolTable.cpp.obj
+src/Parser.obj: src/Parser.cpp.obj
 
-.PHONY : SymbolTable.obj
+.PHONY : src/Parser.obj
 
 # target to build an object file
-SymbolTable.cpp.obj:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/SymbolTable.cpp.obj
-.PHONY : SymbolTable.cpp.obj
+src/Parser.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj
+.PHONY : src/Parser.cpp.obj
 
-SymbolTable.i: SymbolTable.cpp.i
+src/Parser.i: src/Parser.cpp.i
 
-.PHONY : SymbolTable.i
+.PHONY : src/Parser.i
 
 # target to preprocess a source file
-SymbolTable.cpp.i:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/SymbolTable.cpp.i
-.PHONY : SymbolTable.cpp.i
+src/Parser.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.i
+.PHONY : src/Parser.cpp.i
 
-SymbolTable.s: SymbolTable.cpp.s
+src/Parser.s: src/Parser.cpp.s
 
-.PHONY : SymbolTable.s
+.PHONY : src/Parser.s
 
 # target to generate assembly for a file
-SymbolTable.cpp.s:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/SymbolTable.cpp.s
-.PHONY : SymbolTable.cpp.s
+src/Parser.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.s
+.PHONY : src/Parser.cpp.s
 
-main.obj: main.cpp.obj
+src/Registers.obj: src/Registers.cpp.obj
 
-.PHONY : main.obj
+.PHONY : src/Registers.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/Registers.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj
+.PHONY : src/Registers.cpp.obj
 
-main.i: main.cpp.i
+src/Registers.i: src/Registers.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Registers.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Registers.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.i
+.PHONY : src/Registers.cpp.i
 
-main.s: main.cpp.s
+src/Registers.s: src/Registers.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Registers.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Registers.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.s
+.PHONY : src/Registers.cpp.s
+
+src/SymbolTable.obj: src/SymbolTable.cpp.obj
+
+.PHONY : src/SymbolTable.obj
+
+# target to build an object file
+src/SymbolTable.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj
+.PHONY : src/SymbolTable.cpp.obj
+
+src/SymbolTable.i: src/SymbolTable.cpp.i
+
+.PHONY : src/SymbolTable.i
+
+# target to preprocess a source file
+src/SymbolTable.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.i
+.PHONY : src/SymbolTable.cpp.i
+
+src/SymbolTable.s: src/SymbolTable.cpp.s
+
+.PHONY : src/SymbolTable.s
+
+# target to generate assembly for a file
+src/SymbolTable.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.s
+.PHONY : src/SymbolTable.cpp.s
+
+src/main.obj: src/main.cpp.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -266,21 +293,24 @@ help:
 	@echo ... SICXEOnePassAssembler
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Interpreter.obj
-	@echo ... Interpreter.i
-	@echo ... Interpreter.s
-	@echo ... LiteralTable.obj
-	@echo ... LiteralTable.i
-	@echo ... LiteralTable.s
-	@echo ... Parser.obj
-	@echo ... Parser.i
-	@echo ... Parser.s
-	@echo ... SymbolTable.obj
-	@echo ... SymbolTable.i
-	@echo ... SymbolTable.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/Interpreter.obj
+	@echo ... src/Interpreter.i
+	@echo ... src/Interpreter.s
+	@echo ... src/LiteralTable.obj
+	@echo ... src/LiteralTable.i
+	@echo ... src/LiteralTable.s
+	@echo ... src/Parser.obj
+	@echo ... src/Parser.i
+	@echo ... src/Parser.s
+	@echo ... src/Registers.obj
+	@echo ... src/Registers.i
+	@echo ... src/Registers.s
+	@echo ... src/SymbolTable.obj
+	@echo ... src/SymbolTable.i
+	@echo ... src/SymbolTable.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 

@@ -80,31 +80,37 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Interpreter.cpp">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Interpreter.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Interpreter.h">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/LiteralTable.cpp">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Parser.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/LiteralTable.h">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Registers.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Parser.cpp">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Parser.h">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Interpreter.cpp">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/SymbolTable.cpp">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/LiteralTable.cpp">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/SymbolTable.h">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Parser.cpp">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
-		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/main.cpp">
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Registers.cpp">
+			<Option target="SICXEOnePassAssembler"/>
+		</Unit>
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/SymbolTable.cpp">
+			<Option target="SICXEOnePassAssembler"/>
+		</Unit>
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/main.cpp">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
 		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/CMakeLists.txt">
