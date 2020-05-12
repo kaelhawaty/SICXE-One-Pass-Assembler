@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Interpreter.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/Interpreter.cpp.obj"
-  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/LiteralTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/LiteralTable.cpp.obj"
-  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Parser.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/Parser.cpp.obj"
-  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/SymbolTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/SymbolTable.cpp.obj"
-  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/main.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.obj"
+  "E:/assembler/SICXE-One-Pass-Assembler/Interpreter.cpp" "E:/assembler/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/Interpreter.cpp.obj"
+  "E:/assembler/SICXE-One-Pass-Assembler/LiteralTable.cpp" "E:/assembler/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/LiteralTable.cpp.obj"
+  "E:/assembler/SICXE-One-Pass-Assembler/Parser.cpp" "E:/assembler/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/Parser.cpp.obj"
+  "E:/assembler/SICXE-One-Pass-Assembler/SymbolTable.cpp" "E:/assembler/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/SymbolTable.cpp.obj"
+  "E:/assembler/SICXE-One-Pass-Assembler/main.cpp" "E:/assembler/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
