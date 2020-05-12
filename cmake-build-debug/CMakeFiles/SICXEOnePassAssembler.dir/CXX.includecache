@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/main.cpp
-iostream
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/LiteralTable.cpp
+LiteralTable.h
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/LiteralTable.h
+
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/LiteralTable.h
+unordered_map
+-
+forward_list
 -
 

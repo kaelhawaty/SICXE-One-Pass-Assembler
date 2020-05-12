@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../SICXE-One-Pass-Assembler/.idea/SICXEOnePassAssembler.iml" filepath="$PROJECT_DIR$/../SICXE-One-Pass-Assembler/.idea/SICXEOnePassAssembler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SICXE-One-Pass-Assembler.iml" filepath="$PROJECT_DIR$/.idea/SICXE-One-Pass-Assembler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SICXEOnePassAssembler1.iml" filepath="$PROJECT_DIR$/.idea/SICXEOnePassAssembler1.iml" />
     </modules>
   </component>
 </project>

@@ -1,7 +1,7 @@
-set(CMAKE_CXX_COMPILER "C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe")
+set(CMAKE_CXX_COMPILER "C:/Program Files/CodeBlocks/MinGW/bin/g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "9.2.0")
+set(CMAKE_CXX_COMPILER_VERSION "8.1.0")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")
@@ -19,11 +19,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/Program Files (x86)/CodeBlocks/MinGW/bin/ar.exe")
-set(CMAKE_CXX_COMPILER_AR "C:/Program Files (x86)/CodeBlocks/MinGW/bin/gcc-ar.exe")
-set(CMAKE_RANLIB "C:/Program Files (x86)/CodeBlocks/MinGW/bin/ranlib.exe")
-set(CMAKE_CXX_COMPILER_RANLIB "C:/Program Files (x86)/CodeBlocks/MinGW/bin/gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/Program Files (x86)/CodeBlocks/MinGW/bin/ld.exe")
+set(CMAKE_AR "C:/Program Files/CodeBlocks/MinGW/bin/ar.exe")
+set(CMAKE_CXX_COMPILER_AR "C:/Program Files/CodeBlocks/MinGW/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Program Files/CodeBlocks/MinGW/bin/ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "C:/Program Files/CodeBlocks/MinGW/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Program Files/CodeBlocks/MinGW/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
@@ -82,7 +82,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/Program Files (x86)/CodeBlocks/MinGW/include/c++/9.2.0;C:/Program Files (x86)/CodeBlocks/MinGW/include/c++/9.2.0/x86_64-w64-mingw32;C:/Program Files (x86)/CodeBlocks/MinGW/include/c++/9.2.0/backward;C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/9.2.0/include;C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/9.2.0/include-fixed;C:/Program Files (x86)/CodeBlocks/MinGW/x86_64-w64-mingw32/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/9.2.0;C:/Program Files (x86)/CodeBlocks/MinGW/lib/gcc;C:/Program Files (x86)/CodeBlocks/MinGW/x86_64-w64-mingw32/lib;C:/Program Files (x86)/CodeBlocks/MinGW/lib")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++;C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32;C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward;C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include;C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed;C:/Program Files/CodeBlocks/MinGW/x86_64-w64-mingw32/include")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc_s;gcc;moldname;mingwex")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0;C:/Program Files/CodeBlocks/MinGW/lib/gcc;C:/Program Files/CodeBlocks/MinGW/x86_64-w64-mingw32/lib;C:/Program Files/CodeBlocks/MinGW/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
