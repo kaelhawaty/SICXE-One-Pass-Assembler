@@ -16,8 +16,11 @@ struct symbolentry{
     forward_list<pair<int,int>>list;
 };
 class SymbolTable {
+public:
  unordered_map<string , symbolentry> map;
- void add(string symbol,int adress,bool found,int format);
+ void request(string symbol,int location,int format);
+ void define(string symbol,int adress);
+ bool contains(string symbol);
  int get(string symbol);
 };
 

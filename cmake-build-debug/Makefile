@@ -237,6 +237,7 @@ main.obj: main.cpp.obj
 # target to build an object file
 main.cpp.obj:
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -246,6 +247,7 @@ main.i: main.cpp.i
 # target to preprocess a source file
 main.cpp.i:
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -254,6 +256,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.s
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/main.cpp.s
 .PHONY : main.cpp.s
 

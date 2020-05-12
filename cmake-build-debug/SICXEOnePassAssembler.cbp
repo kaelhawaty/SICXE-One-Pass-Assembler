@@ -106,6 +106,9 @@
 		<Unit filename="E:/assembler/SICXE-One-Pass-Assembler/SymbolTable.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
+		<Unit filename="E:/assembler/SICXE-One-Pass-Assembler/cmake-build-debug/main.cpp">
+			<Option target="SICXEOnePassAssembler"/>
+		</Unit>
 		<Unit filename="E:/assembler/SICXE-One-Pass-Assembler/main.cpp">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
