@@ -6,8 +6,22 @@
 #define SICXEONEPASSASSEMBLER_INTERPRETER_H
 
 
-class Interpreter {
+#include <fstream>
+#include "Parser.h"
+#include "SymbolTable.h"
+#include "LiteralTable.h"
 
+using namespace std;
+class Interpreter {
+private:
+    ifstream in;
+    Parser *parser;
+    SymbolTable symbolTable;
+    LiteralTable literalTable;
+    int locationCounter;
+public:
+    Interpreter(string path);
+    void Assemble();
 };
 
 

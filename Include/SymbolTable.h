@@ -18,6 +18,7 @@ struct symbolentry{
 class SymbolTable {
 public:
  unordered_map<string , symbolentry> map;
+ SymbolTable();
  void request(const string& symbol,int location,int format);
  void define(const string& symbol,int address);
  bool contains(const string& symbol);

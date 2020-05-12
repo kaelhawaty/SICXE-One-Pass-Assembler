@@ -6,7 +6,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+SymbolTable::SymbolTable() {
 
+}
 void SymbolTable::request(const string& symbol,int location,int format){
         map[symbol].list.push_front(make_pair(location,format));
 }

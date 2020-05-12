@@ -3,6 +3,11 @@
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Interpreter.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/OPTable.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Parser.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Registers.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/src/Interpreter.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h
@@ -22,6 +27,8 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/src/SymbolTable.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Interpreter.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Parser.h
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/src/main.cpp

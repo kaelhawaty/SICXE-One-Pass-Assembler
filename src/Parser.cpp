@@ -20,7 +20,6 @@ const unordered_map<string,array<Need, 3>> mp = {
         {"EQU",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"LTORG", {Need::FORBIDDEN, Need::NEEDED, Need::FORBIDDEN}},
         {"START", {Need::OPTIONAL, Need::OPTIONAL, Need::OPTIONAL}},
-        {"RSUB", {Need::FORBIDDEN, Need::NEEDED, Need::FORBIDDEN}},
         {"RESB",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"RESW",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"BYTE",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},

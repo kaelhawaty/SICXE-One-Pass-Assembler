@@ -2,10 +2,14 @@
 #include <fstream>
 #include "../Include/SymbolTable.h"
 #include "../Include/Parser.h"
+#include "../Include/Interpreter.h"
+
 using namespace std;
 int main() {
-    ifstream in("../Q2.txt");
-    if(!in){
+    //ifstream in("../Q2.txt");
+    Interpreter interpreter("../Q2.txt");
+    interpreter.Assemble();
+   /* if(!in){
         cout << "failure";
         return 0;
     }
@@ -27,5 +31,5 @@ int main() {
         }
         cout << "\n";
     }
-    cout << "\n";
+    cout << "\n";*/
 }
