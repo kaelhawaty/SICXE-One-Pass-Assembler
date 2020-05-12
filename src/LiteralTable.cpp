@@ -18,10 +18,10 @@ int LiteralTable::getAddressOfLiteral(long long literal){
     if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal doesn't Exist");
     }
-    return literalTable[literal].literalAddress;
+    return literalTable[literal];
 }
 void LiteralTable::addRequestToLiteral(long long literal, int address){
-    if(!LiteralTable:containsLiteral(literal)){
+    if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal exist");
     }
     UnAssignedLiterals[literal].push_front(address);

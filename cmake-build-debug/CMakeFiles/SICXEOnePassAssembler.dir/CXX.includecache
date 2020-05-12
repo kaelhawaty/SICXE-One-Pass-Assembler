@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h
+unordered_map
+-
+forward_list
+-
+
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/src/LiteralTable.cpp
+../Include/LiteralTable.h
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h
+
