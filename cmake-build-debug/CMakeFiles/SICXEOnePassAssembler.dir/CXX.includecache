@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/assembler/SICXE-One-Pass-Assembler/SymbolTable.h
+unordered_map
+-
+forward_list
+-
+string
+-
+ostream
+-
+
+E:/assembler/SICXE-One-Pass-Assembler/main.cpp
+iostream
+-
+SymbolTable.h
+E:/assembler/SICXE-One-Pass-Assembler/SymbolTable.h
+
