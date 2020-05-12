@@ -9,12 +9,7 @@
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
 
-Interpreter::Interpreter(string path) {
-    in.open(path);
-    if(in.fail()){
-        throw runtime_error("Can't open the file");
-    }
-    parser = new Parser(in);
+Interpreter::Interpreter(ifstream& file) : parser(Parser(file)){
     locationCounter = -1;
 }
 //TODO
@@ -23,17 +18,17 @@ int evaluateExpression(string expression){
 }
 void Interpreter::Assemble() {
     string line;
-    while(*parser>>line){
-        if(parser->isComment(line)){
+    while(  parser || parser>>line){
+        if(parser.isComment(line)){
             continue;
         }
         array<string, 3> arr;
-        arr = parser->parseLine(line);
+        arr = parser.parseLine(line);
         if(locationCounter==-1 && arr[1]!="START"){
             throw runtime_error("The program must starts with START directive");
         }
-        Format format = parser->formatType(arr[1]);
-        AdressingType addressingType = parser->addressType(arr[2]);
+        Format format = parser.formatType(arr[1]);
+        AdressingType addressingType = parser.addressType(arr[2]);
         if(symbolTable.contains(arr[0])){
             throw runtime_error("redefinition of Label "+arr[0]);
         }else if(arr[0]!=""){

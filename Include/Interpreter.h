@@ -14,13 +14,12 @@
 using namespace std;
 class Interpreter {
 private:
-    ifstream in;
-    Parser *parser;
+    Parser parser;
     SymbolTable symbolTable;
     LiteralTable literalTable;
     int locationCounter;
 public:
-    Interpreter(string path);
+    Interpreter(ifstream& file);
     void Assemble();
 };
 
