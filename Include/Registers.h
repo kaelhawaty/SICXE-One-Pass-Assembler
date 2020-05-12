@@ -9,12 +9,9 @@
 #include <string>
 #include <unordered_map>
 
-class Registers {
-private:
-    static std::unordered_map<std::string, int> table;
-public:
-    static bool isRegister(const std::string& s);
-    static int getRegister(const std::string& s);
+namespace Registers{
+    bool isRegister(const std::string& s);
+    int getRegister(const std::string& s);
 };
 
 #endif //SICXEONEPASSASSEMBLER_REGISTERS_H

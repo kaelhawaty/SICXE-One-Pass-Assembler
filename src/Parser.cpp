@@ -10,6 +10,7 @@
 #include <tuple>
 #include <sstream>
 #include "../include/Registers.h"
+#include "../include/OPTable.h"
 #include "../Include/Parser.h"
 using namespace std;
 enum class Need{OPTIONAL, NEEDED, FORBIDDEN};
@@ -18,6 +19,12 @@ const unordered_map<string,array<Need, 3>> mp = {
         {"ORG", {Need::FORBIDDEN, Need::NEEDED, Need::OPTIONAL}},
         {"EQU",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"LTORG", {Need::FORBIDDEN, Need::NEEDED, Need::FORBIDDEN}},
+        {"START", {Need::OPTIONAL, Need::OPTIONAL, Need::OPTIONAL}},
+        {"RSUB", {Need::FORBIDDEN, Need::NEEDED, Need::FORBIDDEN}},
+        {"RESB",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
+        {"RESW",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
+        {"BYTE",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
+        {"WORD",{Need::NEEDED, Need::NEEDED, Need::NEEDED}}
 };
 const unordered_set<string> isFormat2{
     "ADDR", "CLEAR", "COMPR", "DIVR",
@@ -26,10 +33,12 @@ const unordered_set<string> isFormat2{
 };
 Parser::Parser(std::ifstream& file) : file(file){
 }
-array<string, 3> Parser::parseLine(){
-    string s;
-    getline(file, s);
-    regex e("^\\s*\\w+\\s+\\+?\\w+\\s*(\\s+[#@]?\\w+(\\,\\w+)?)?\\s*(\\.\\w+)?$");
+bool Parser::isComment(const std::string &line) {
+    return  line.find_first_not_of(' ') == string::npos || line[0] == '.';
+}
+array<string, 3> Parser::parseLine(string& s){
+    std::for_each(s.begin(), s.end(), [](char & c){c = ::toupper(c);});
+    regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+((\\s+[#@]?[a-zA-Z]\\w*(\\,[a-zA-Z]\\w*)?\\s*)|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
     if(!regex_match(s, e)){
         throw runtime_error("Unknown line!");
     }
@@ -38,6 +47,7 @@ array<string, 3> Parser::parseLine(){
     for(std::string s; iss >> s; )
         result.push_back(s);
     array<string, 3> arr;
+    // Conjecture LULW, If it is 1 word then its opcode, otherwise its opcode and operand, otherwide all 3
     if(result.size() == 1){
         arr = {"", result[0], ""};
     }else if(result.size() == 2){
@@ -46,6 +56,11 @@ array<string, 3> Parser::parseLine(){
         arr = {result[0], result[1], result[2]};
     }
     auto it = mp.find(arr[1]);
+    // Not Opcode nor Directive
+    if(!OPTable::isOp(arr[1]) && it == mp.end()){
+        throw runtime_error("Not OPcode nor Directive");
+    }
+    // Checking Need
     if(it != mp.end()){
         array<Need, 3> cur = it->second;
         for(int i = 0; i < 3; i++){
@@ -59,14 +74,14 @@ array<string, 3> Parser::parseLine(){
     }else if(arr[1] == "" || arr[2] == ""){
         throw runtime_error("Line lacks one of Label/Opcode/Operand!");
     }
+    // If format 2 then operands are registers
     if(isFormat2.count(arr[1])){
         istringstream temp(arr[2]);
-        for (string i; temp >> i;) {
-            if(!Registers::isRegister(i)){
+        string split;
+        while(getline(temp, split, ',')){
+            if(!Registers::isRegister(split)){
                 throw runtime_error("Operands aren't Registers, Format 2");
             }
-            if (temp.peek() == ',')
-                temp.ignore();
         }
     }
     return arr;
@@ -98,4 +113,11 @@ AdressingType Parser::addressType(const string& operand){
         return AdressingType::INDEXED;
     }
     return AdressingType::DIRECT;
+}
+Parser& operator>>(Parser& in, string& s){
+    getline(in.file, s);
+    return in;
+}
+Parser::operator bool() const{
+    return !file.eof();
 }

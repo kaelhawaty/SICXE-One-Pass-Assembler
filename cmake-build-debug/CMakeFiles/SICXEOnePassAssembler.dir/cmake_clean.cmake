@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj"
+  "CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"

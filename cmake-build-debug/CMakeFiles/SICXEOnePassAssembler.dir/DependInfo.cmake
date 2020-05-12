@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Interpreter.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj"
   "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/LiteralTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/OPTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj"
   "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Parser.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
   "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Registers.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
   "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/SymbolTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"

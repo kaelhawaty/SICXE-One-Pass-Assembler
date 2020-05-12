@@ -86,6 +86,9 @@
 		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/OPTable.h">
+			<Option target="SICXEOnePassAssembler"/>
+		</Unit>
 		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Parser.h">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
@@ -99,6 +102,9 @@
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
 		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/LiteralTable.cpp">
+			<Option target="SICXEOnePassAssembler"/>
+		</Unit>
+		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/OPTable.cpp">
 			<Option target="SICXEOnePassAssembler"/>
 		</Unit>
 		<Unit filename="C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Parser.cpp">

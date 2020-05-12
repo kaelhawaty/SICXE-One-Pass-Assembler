@@ -176,6 +176,33 @@ src/LiteralTable.cpp.s:
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.s
 .PHONY : src/LiteralTable.cpp.s
 
+src/OPTable.obj: src/OPTable.cpp.obj
+
+.PHONY : src/OPTable.obj
+
+# target to build an object file
+src/OPTable.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj
+.PHONY : src/OPTable.cpp.obj
+
+src/OPTable.i: src/OPTable.cpp.i
+
+.PHONY : src/OPTable.i
+
+# target to preprocess a source file
+src/OPTable.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.i
+.PHONY : src/OPTable.cpp.i
+
+src/OPTable.s: src/OPTable.cpp.s
+
+.PHONY : src/OPTable.s
+
+# target to generate assembly for a file
+src/OPTable.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.s
+.PHONY : src/OPTable.cpp.s
+
 src/Parser.obj: src/Parser.cpp.obj
 
 .PHONY : src/Parser.obj
@@ -299,6 +326,9 @@ help:
 	@echo ... src/LiteralTable.obj
 	@echo ... src/LiteralTable.i
 	@echo ... src/LiteralTable.s
+	@echo ... src/OPTable.obj
+	@echo ... src/OPTable.i
+	@echo ... src/OPTable.s
 	@echo ... src/Parser.obj
 	@echo ... src/Parser.i
 	@echo ... src/Parser.s

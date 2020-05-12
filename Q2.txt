@@ -1,0 +1,54 @@
+PROG     START   0100
+BGN      JSUB    RDSTRING
+         LDS     #1
+         LDX     LEN
+         SUBR    S,X
+         LDT     #0
+LOOP     LDCH    STRING,X
+         JSUB    WRITECHR
+         SUBR    S,X
+         COMPR   X,T
+         JGT     LOOP
+         JEQ     LOOP
+         J       *
+
+
+.FOR READING STRINGS
+
+
+READCHAR TD      INDEV
+         JEQ     READCHAR
+         RD      INDEV
+         RSUB
+    
+WRITECHR TD      OUTDEV
+         JEQ     WRITECHR
+         WD      OUTDEV
+         RSUB
+
+RDSTRING RMO     L,A
+         LDS     #1
+         STA     STACK
+         LDX     LEN
+         LDA     #0
+READ     JSUB    READCHAR
+         COMP    EOF
+         JEQ     OUT
+         STCH    STRING,X
+         ADDR    S,X
+         J       READ         
+
+OUT      LDA     STACK
+         RMO     A,L
+         STX     LEN
+         RSUB         
+ 
+INDEV    BYTE    X'F3'
+OUTDEV   BYTE    X'05'
+EOF      WORD    #4
+SPACE    WORD    32
+STACK    RESW    1
+LEN      WORD    0
+STRING   RESB    100
+CHAR     RESW    1
+         END     BGN
