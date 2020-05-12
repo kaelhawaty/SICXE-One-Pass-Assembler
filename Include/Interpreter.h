@@ -10,7 +10,8 @@
 #include "Parser.h"
 #include "SymbolTable.h"
 #include "LiteralTable.h"
-
+#include <vector>
+#include "OperandParser.h"
 using namespace std;
 class Interpreter {
 private:

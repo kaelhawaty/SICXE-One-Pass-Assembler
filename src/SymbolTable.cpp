@@ -13,6 +13,7 @@ void SymbolTable::request(const string& symbol,int location,int format){
         map[symbol].list.push_front(make_pair(location,format));
 }
 void SymbolTable::define(const string& symbol,int address){
+    if (map[symbol].found == true)throw runtime_error("Same symbol defined before wtf");
        map[symbol].address = address;
        map[symbol].found = true;
        forward_list<pair<int,int>>::iterator itr = map[symbol].list.begin();

@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler
+CMAKE_SOURCE_DIR = "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles" "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -202,6 +202,33 @@ src/OPTable.s: src/OPTable.cpp.s
 src/OPTable.cpp.s:
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.s
 .PHONY : src/OPTable.cpp.s
+
+src/OperandParser.obj: src/OperandParser.cpp.obj
+
+.PHONY : src/OperandParser.obj
+
+# target to build an object file
+src/OperandParser.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj
+.PHONY : src/OperandParser.cpp.obj
+
+src/OperandParser.i: src/OperandParser.cpp.i
+
+.PHONY : src/OperandParser.i
+
+# target to preprocess a source file
+src/OperandParser.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.i
+.PHONY : src/OperandParser.cpp.i
+
+src/OperandParser.s: src/OperandParser.cpp.s
+
+.PHONY : src/OperandParser.s
+
+# target to generate assembly for a file
+src/OperandParser.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.s
+.PHONY : src/OperandParser.cpp.s
 
 src/Parser.obj: src/Parser.cpp.obj
 
@@ -329,6 +356,9 @@ help:
 	@echo ... src/OPTable.obj
 	@echo ... src/OPTable.i
 	@echo ... src/OPTable.s
+	@echo ... src/OperandParser.obj
+	@echo ... src/OperandParser.i
+	@echo ... src/OperandParser.s
 	@echo ... src/Parser.obj
 	@echo ... src/Parser.i
 	@echo ... src/Parser.s
