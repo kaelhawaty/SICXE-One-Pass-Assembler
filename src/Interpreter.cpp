@@ -14,7 +14,22 @@ Interpreter::Interpreter(ifstream &file) : parser(Parser(file)) {
 }
 
 //TODO
-int evaluateExpression(string expression) {
+int Interpreter::evaluateExpression(const string &operand) {
+    int address = 0 ,sign =1 ;
+    for (int i = 0; i < operand.size(); i++) {
+        string temp = "";
+        if (operand[i] == '*'){address += sign * locationCounter;sign =1 ;}
+        else if (operand[i] == '-')sign *= -1;
+        else if (operand[i] == '+')sign *= 1; //IDK
+        else {
+            while (i<operand.size()&& isalpha(operand[i])) {
+                temp += operand[i];
+                i++;
+            }
+            address += symbolTable.get(temp) * sign;
+        }
+    }
+
     return 0;
 }
 
@@ -81,7 +96,7 @@ void Interpreter::Assemble() {
                 locationCounter = OperandParser::hexStringToInt(arr[2]);
                 writer = new Writer(locationCounter, arr[0]);
             } else if (arr[1] == "END") {
-                writer->end();
+                writer->writeEndRecord();
                 return;
             } else if (arr[1] == "ORG") {
                 locationCounter = symbolTable.get(arr[2]);
@@ -91,36 +106,22 @@ void Interpreter::Assemble() {
                 int address = OperandParser::parseOperand(arr[2], locationCounter, symbolTable);
                 symbolTable.define(arr[0],address);
             } else if (arr[1] == "BYTE") {
-               /* bool isLetter = arr[2][0] == 'C';
-                long long literal;
-                int size = 0, i = 1;
-                while (arr[2][i] != '\'')i++;
-                for (; i < arr[2].size(); i++) {
-                    if (arr[2][i] == '\'')break;
-                    size++;
-                    if (isLetter) {
-                        literal = OperandParser::letterStringToll(arr[2][i]);
-                    } else {
-                        literal = OperandParser::hexStringToll("" + arr[2][i]);
-                    }
-                    writer->write(literal, 1);
-                }*/
                string literal = OperandParser::parseLiteral(arr[2]) ;
-                writer-> write(literal);
+                writer-> writeTextRecord(literal,locationCounter);
                 locationCounter += literal.size()/2 + 1;
             } else if (arr[1] == "WORD") {
                 int size = atoll(arr[2].c_str()) ;
                 string literal = OperandParser::numToHexString(size,3);
-                writer->write(literal);
+                writer->writeTextRecord(literal,locationCounter);
                 locationCounter += 4;
             } else if (arr[1] == "RESB") {
                 int size = atoi(arr[2].c_str());
                 locationCounter += size + 1;
-                writer->cutText();
+                writer->cutText(locationCounter);
             } else if (arr[1] == "RESW") {
                 int size = atoi(arr[2].c_str());
                 locationCounter += size * 3 + 1;
-                writer->cutText();
+                writer->cutText(locationCounter);
             }
 
         }

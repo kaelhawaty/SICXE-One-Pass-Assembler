@@ -6,33 +6,41 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/Writer.h
-iostream
--
-fstream
--
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/OPTable.h
 string
--
-
-C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/src/Writer.cpp
-../Include/Writer.h
-C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/Writer.h
-iostream
--
-vector
--
-math.h
--
-bitset
--
-stdlib.h
 -
 unordered_map
 -
+
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/Parser.h
+fstream
+-
+
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/Registers.h
 string
 -
-string.h
+unordered_map
+-
+
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/src/Parser.cpp
+array
+-
+regex
+-
+unordered_map
+-
+unordered_set
+-
+vector
+-
+tuple
 -
 sstream
 -
+../include/Registers.h
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/Registers.h
+../include/OPTable.h
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/OPTable.h
+../Include/Parser.h
+C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/Include/Parser.h
 

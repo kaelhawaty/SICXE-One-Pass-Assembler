@@ -28,7 +28,7 @@ long long OperandParser::parseOperand(string &operand, int &locationCounter, Sym
     return address;
 }
 
-string &OperandParser::parseLiteral(string &operand, int &locationCounter, SymbolTable &symbolTable) {
+string &OperandParser::parseLiteral(string &operand) {
     string newOperand = "", str = "";
     int i = 0;
     bool start = false,isLetter =false;

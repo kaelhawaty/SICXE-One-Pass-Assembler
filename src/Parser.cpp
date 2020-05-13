@@ -76,7 +76,7 @@ array<string, 3> Parser::parseLine(string &s) {
     if (!OPTable::isOp(arr[1]) && it == mp.end()) {
         throw runtime_error("Not OPcode nor Directive");
     }
-    /*if (arr[0] != "" && checkNotOpcodeorDirective(arr[0])) {
+    if (arr[0] != "" && checkNotOpcodeorDirective(arr[0])) {
         throw runtime_error("Label is a reserved word");
     }
 
