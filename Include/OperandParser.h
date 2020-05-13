@@ -13,7 +13,6 @@ namespace OperandParser {
 
     int hexCharToInt(unordered_map<char,int> &uh ,const char &hexChar);
     int hexStringToInt(const string &hexString);
-   // long long int letterStringToll(const char letterChar);
-    string numToHexString(int num, int hexaBytes = 1);
+    string numToHexString(int num, int halfBytes = 1);
 }
 #endif //SICXEONEPASSASSEMBLER_OPERANDPARSER_H

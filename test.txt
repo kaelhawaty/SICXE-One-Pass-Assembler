@@ -1,3 +1,4 @@
          START   0000
 omar     word    100
+         add     omar
          END     omar
