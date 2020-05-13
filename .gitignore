@@ -1,4 +1,4 @@
-logs/
+cmake-build-debug/
 # Prerequisites
 *.d
 
