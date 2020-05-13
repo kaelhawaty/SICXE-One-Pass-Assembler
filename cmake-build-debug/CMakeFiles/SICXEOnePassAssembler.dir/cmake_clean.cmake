@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"
+  "CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj"
   "CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj"
   "SICXEOnePassAssembler.exe"
   "SICXEOnePassAssembler.exe.manifest"

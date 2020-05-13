@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler"
+CMAKE_SOURCE_DIR = E:\assembler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug"
+CMAKE_BINARY_DIR = E:\assembler\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles" "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\assembler\cmake-build-debug\CMakeFiles E:\assembler\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\assembler\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -311,6 +311,33 @@ src/SymbolTable.cpp.s:
 	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.s
 .PHONY : src/SymbolTable.cpp.s
 
+src/Writer.obj: src/Writer.cpp.obj
+
+.PHONY : src/Writer.obj
+
+# target to build an object file
+src/Writer.cpp.obj:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj
+.PHONY : src/Writer.cpp.obj
+
+src/Writer.i: src/Writer.cpp.i
+
+.PHONY : src/Writer.i
+
+# target to preprocess a source file
+src/Writer.cpp.i:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.i
+.PHONY : src/Writer.cpp.i
+
+src/Writer.s: src/Writer.cpp.s
+
+.PHONY : src/Writer.s
+
+# target to generate assembly for a file
+src/Writer.cpp.s:
+	$(MAKE) -f CMakeFiles\SICXEOnePassAssembler.dir\build.make CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.s
+.PHONY : src/Writer.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -368,6 +395,9 @@ help:
 	@echo ... src/SymbolTable.obj
 	@echo ... src/SymbolTable.i
 	@echo ... src/SymbolTable.s
+	@echo ... src/Writer.obj
+	@echo ... src/Writer.i
+	@echo ... src/Writer.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

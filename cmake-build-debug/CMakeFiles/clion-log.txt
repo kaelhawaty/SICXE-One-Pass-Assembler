@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\omara\Desktop\C++ Programming\Assembler\SICXE-One-Pass-Assembler"
+"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" E:\assembler
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/omara/Desktop/C++ Programming/Assembler/SICXE-One-Pass-Assembler/cmake-build-debug
+-- Build files have been written to: E:/assembler/cmake-build-debug

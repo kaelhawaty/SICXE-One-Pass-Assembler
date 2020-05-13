@@ -26,6 +26,7 @@ const unordered_map<string,array<Need, 3>> mp = {
         {"WORD",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"RSUB",{Need::OPTIONAL, Need::NEEDED, Need::FORBIDDEN}}
 };
+
 const unordered_set<string> isFormat2{
         "ADDR", "CLEAR", "COMPR", "DIVR",
         "MULR", "RMO", "SHIFTL", "SHIFTR",
@@ -34,6 +35,7 @@ const unordered_set<string> isFormat2{
 const regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+((\\s+[#@]?[a-zA-Z]\\w*(\\,[a-zA-Z]\\w*)?\\s*)|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
 Parser::Parser(std::ifstream& file) : file(file){
 }
+
 bool Parser::isComment(const std::string &line) {
     return  line.find_first_not_of(' ') == string::npos || line[0] == '.';
 }

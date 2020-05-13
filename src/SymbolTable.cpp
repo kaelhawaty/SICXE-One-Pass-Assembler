@@ -33,5 +33,5 @@ bool SymbolTable::contains(const string& symbol){
 int SymbolTable::get(const string& symbol){
      if(map[symbol].found == true)
          return map[symbol].address;
-    throw runtime_error("Not found!");
+    throw runtime_error("Not Defined!!");
 }

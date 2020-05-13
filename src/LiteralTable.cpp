@@ -14,18 +14,22 @@ bool LiteralTable::containsLiteral(long long literal) {
     }
     return false;
 }
+
 int LiteralTable::getAddressOfLiteral(long long literal){
     if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal doesn't Exist");
     }
     return literalTable[literal];
 }
+
 void LiteralTable::addRequestToLiteral(long long literal, int address){
     if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal exist");
     }
+
     UnAssignedLiterals[literal].push_front(address);
 }
+
 int getCountBytes(long long literal){
     int ans = 0;
     while(literal >>= 8){
@@ -33,6 +37,7 @@ int getCountBytes(long long literal){
     }
     return ans;
 }
+
 void LiteralTable:: organize(int& address) {
     for(auto entry : UnAssignedLiterals){
         literalTable[entry.first] = address;
@@ -42,5 +47,6 @@ void LiteralTable:: organize(int& address) {
         }
         address += cnt;
     }
+
     UnAssignedLiterals.erase(UnAssignedLiterals.begin(), UnAssignedLiterals.end());
 }
