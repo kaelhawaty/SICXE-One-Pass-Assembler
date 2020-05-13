@@ -50,7 +50,14 @@ static bool checkNotOpcodeorDirective(const string &s) {
 }
 
 array<string, 3> Parser::parseLine(string &s) {
-    std::for_each(s.begin(), s.end(), [](char &c) { c = ::toupper(c); });
+    std::for_each(s.begin(), s.end(), [val{false}](char &c) mutable {
+        if(c == '\''){
+            val = val^1;
+        }
+        if(!val) {
+            c = ::toupper(c);
+        }
+    });
     if (!regex_match(s, e)) {
         throw runtime_error("Unknown line!");
     }

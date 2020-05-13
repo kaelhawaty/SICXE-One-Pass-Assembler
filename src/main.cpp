@@ -18,9 +18,12 @@ int main() {
      wr.writeTextRecord(4343,4,47632746324);
      wr.end();*/
     try {
-        ifstream ifs;
+        ifstream ifs("../test.txt");
         ofstream out("../hi.txt");
-        ifs.open("../test.txt", ifstream::in);
+        if(!ifs || !out){
+            cout << "BUGGED";
+            return 0;
+        }
         Interpreter interpreter(ifs, out);
         interpreter.Assemble();
         ifs.close();

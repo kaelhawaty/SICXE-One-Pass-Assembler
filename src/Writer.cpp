@@ -4,6 +4,7 @@
 //
 
 #include "../Include/Writer.h"
+#include  <iomanip>
 using namespace std;
 const int MAX = 30;
 Writer::Writer(ofstream& file) : fs(file){
@@ -28,12 +29,8 @@ void Writer:: cutText(int newStart) {
     if(curPos==startOfRecord)
         return;
     fs << "T";
-    char str[6];
-    sprintf(str, "%06X", startOfRecord);
-    fs << str;
-    char length[2];
-    sprintf(length, "%02X", curPos-startOfRecord);
-    fs << length;
+    fs << setfill('0') << setw(6) << hex << startOfRecord;
+    fs << setfill('0') << setw(6) << hex << curPos-startOfRecord;
     startOfRecord = curPos =newStart;
     for(auto i : record)
         fs << i;
@@ -44,9 +41,7 @@ void Writer:: cutText(int newStart) {
 void Writer::writeModificationRecord(int address){
     cutText(curPos);
     fs << "M";
-    char str[6];
-    sprintf(str, "%06X", address);
-    fs << str;
+    fs << setfill('0') << setw(6) << hex << address;
     fs << "05";
     fs << "\n";
 }
@@ -61,12 +56,9 @@ void Writer::writeTextRecord(const std::string& Hexa, int address) {
 void Writer::writeEndRecord() {
     cutText(curPos);
     fs << "E";
-    char str[6];
-    sprintf(str, "%06X", startOfProgram);
-    fs << str;
+    fs << setfill('0') << setw(6) << hex << startOfProgram;
     fs.seekp(7,ios::beg);
-    sprintf(str, "%06X", lengthOfProgram);
-    fs << str;
-    fs.close();
+    fs << setfill('0') << setw(6) << hex << startOfProgram;
+    fs << setfill('0') << setw(6) << hex << lengthOfProgram;
 }
 
