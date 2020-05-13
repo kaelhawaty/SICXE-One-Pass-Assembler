@@ -37,6 +37,9 @@ Parser::Parser(std::ifstream& file) : file(file){
 bool Parser::isComment(const std::string &line) {
     return  line.find_first_not_of(' ') == string::npos || line[0] == '.';
 }
+static bool checkNotOpcodeorDirective(const string& s){
+    return !OPTable::isOp(s) && mp.find(s) == mp.end();
+}
 array<string, 3> Parser::parseLine(string& s){
     std::for_each(s.begin(), s.end(), [](char & c){c = ::toupper(c);});
     if(!regex_match(s, e)){
@@ -63,6 +66,12 @@ array<string, 3> Parser::parseLine(string& s){
     // Not Opcode nor Directive
     if(!OPTable::isOp(arr[1]) && it == mp.end()){
         throw runtime_error("Not OPcode nor Directive");
+    }
+    if(checkNotOpcodeorDirective(arr[0])){
+        throw runtime_error("Label is a reserved word");
+    }
+    if(checkNotOpcodeorDirective(arr[2])){
+        throw runtime_error("Operand is a reserved word");
     }
     // Checking Need
     if(it != mp.end()){

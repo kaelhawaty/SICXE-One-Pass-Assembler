@@ -23,7 +23,10 @@ void SymbolTable::define(const string& symbol,int address){
 };
 
 bool SymbolTable::contains(const string& symbol){
-  return map[symbol].found;
+    if(map.find(symbol) == map.end()){
+        return false;
+    }
+    return  map[symbol].found;
 };
 
 
