@@ -17,8 +17,16 @@ int main() {
      wr.writeModificatinRecord(343,2);
      wr.writeTextRecord(4343,4,47632746324);
      wr.end();*/
-    ifstream ifs;
-    ifs.open("../test.txt", ifstream::in);
-    Interpreter interpreter(ifs);
-    interpreter.Assemble();
+    try {
+        ifstream ifs;
+        ofstream out("../hi.txt");
+        ifs.open("../test.txt", ifstream::in);
+        Interpreter interpreter(ifs, out);
+        interpreter.Assemble();
+        ifs.close();
+        out.close();
+    }catch(exception& e){
+        cout << e.what();
+    }
+    return 0;
 }

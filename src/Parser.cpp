@@ -73,14 +73,14 @@ array<string, 3> Parser::parseLine(string &s) {
     }
     auto it = mp.find(arr[1]);
     // Not Opcode nor Directive
-    if (!OPTable::isOp(arr[1]) && it == mp.end()) {
+    if (checkNotOpcodeorDirective(arr[1])) {
         throw runtime_error("Not OPcode nor Directive");
     }
-    if (arr[0] != "" && checkNotOpcodeorDirective(arr[0])) {
+    if (!checkNotOpcodeorDirective(arr[0])) {
         throw runtime_error("Label is a reserved word");
     }
 
-    if (arr[2] != "" && checkNotOpcodeorDirective(arr[2])) {
+    if ( !checkNotOpcodeorDirective(arr[2])) {
         throw runtime_error("Operand is a reserved word");
     }
     // Checking Need

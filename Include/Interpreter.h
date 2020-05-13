@@ -19,10 +19,10 @@ private:
     Parser parser;
     SymbolTable symbolTable;
     LiteralTable literalTable;
-    Writer *writer;
+    Writer writer;
     int locationCounter;
 public:
-    Interpreter(ifstream& file);
+    Interpreter(ifstream& file, ofstream& outfile);
     void Assemble();
 
     int evaluateExpression(const string &operand);

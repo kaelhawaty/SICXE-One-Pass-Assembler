@@ -5,9 +5,10 @@
 
 #include "../Include/Writer.h"
 using namespace std;
-ofstream fs ("../hi.txt");
 const int MAX = 30;
-Writer::Writer(int start,std::string name){
+Writer::Writer(ofstream& file) : fs(file){
+}
+void Writer::createHeader(int start, const std::string &name) {
     startOfProgram = start;
     programName = name;
     startOfRecord = curPos = start;
@@ -49,7 +50,7 @@ void Writer::writeModificationRecord(int address){
     fs << "05";
     fs << "\n";
 }
-void Writer::writeTextRecord(std::string Hexa, int address) {
+void Writer::writeTextRecord(const std::string& Hexa, int address) {
     if(address!=curPos)
         cutText(curPos);
     reserve(Hexa.size());

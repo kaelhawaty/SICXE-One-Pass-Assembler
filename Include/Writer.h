@@ -15,10 +15,12 @@ private:
     int startOfProgram, startOfRecord, curPos, lengthOfProgram;
     std::string programName;
     std::vector<std::string>record;
+    std::ofstream& fs;
 public:
-    Writer(int start,std::string name);
+    Writer(std::ofstream& file);
+    void createHeader(int start, const std::string& name);
     void writeModificationRecord(int address);
-    void writeTextRecord(std::string Hexa, int address);
+    void writeTextRecord(const std::string& Hexa, int address);
     void cutText(int newAddress);
     void reserve(int cnt);
     void writeEndRecord();

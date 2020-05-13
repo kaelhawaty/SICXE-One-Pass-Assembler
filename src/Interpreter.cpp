@@ -9,7 +9,7 @@
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
 
-Interpreter::Interpreter(ifstream &file) : parser(Parser(file)) {
+Interpreter::Interpreter(ifstream &file, ofstream& outfile) : parser(Parser(file)), writer(Writer(outfile)) {
     locationCounter = -1;
 }
 
@@ -94,9 +94,9 @@ void Interpreter::Assemble() {
                 }
                 //TODO EDIT WHEN WRITER CONSTRUCTOR EDITED
                 locationCounter = OperandParser::hexStringToInt(arr[2]);
-                writer = new Writer(locationCounter, arr[0]);
+                writer.createHeader(locationCounter, arr[0]);
             } else if (arr[1] == "END") {
-                writer->writeEndRecord();
+                writer.writeEndRecord();
                 return;
             } else if (arr[1] == "ORG") {
                 locationCounter = symbolTable.get(arr[2]);
@@ -107,22 +107,22 @@ void Interpreter::Assemble() {
                 symbolTable.define(arr[0],address);
             } else if (arr[1] == "BYTE") {
                string literal = OperandParser::parseLiteral(arr[2]) ;
-                writer-> writeTextRecord(literal,locationCounter);
+                writer.writeTextRecord(literal,locationCounter);
                 locationCounter += literal.size()/2 + 1;
             } else if (arr[1] == "WORD") {
                 int size = atoll(arr[2].c_str()) ;
                 string literal ;
                 literal= OperandParser::numToHexString(size,3);
-                writer->writeTextRecord(literal,locationCounter);
+                writer.writeTextRecord(literal,locationCounter);
                 locationCounter += 4;
             } else if (arr[1] == "RESB") {
                 int size = atoi(arr[2].c_str());
                 locationCounter += size + 1;
-                writer->cutText(locationCounter);
+                writer.cutText(locationCounter);
             } else if (arr[1] == "RESW") {
                 int size = atoi(arr[2].c_str());
                 locationCounter += size * 3 + 1;
-                writer->cutText(locationCounter);
+                writer.cutText(locationCounter);
             }
 
         }
