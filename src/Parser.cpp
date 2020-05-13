@@ -82,7 +82,7 @@ array<string, 3> Parser::parseLine(string &s) {
 
     if (arr[2] != "" && checkNotOpcodeorDirective(arr[2])) {
         throw runtime_error("Operand is a reserved word");
-    }
+    }*/
     // Checking Need
     if (it != mp.end()) {
         array<Need, 3> cur = it->second;
