@@ -12,6 +12,9 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj: ../Include/Writer.
 CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj: ../src/Interpreter.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: ../Include/LiteralTable.h
+CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: ../Include/OperandParser.h
+CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: ../Include/SymbolTable.h
+CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: ../Include/Writer.h
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: ../src/LiteralTable.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj: ../Include/OPTable.h

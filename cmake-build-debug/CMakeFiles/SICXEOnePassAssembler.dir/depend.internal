@@ -13,6 +13,9 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/src/Interpreter.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/LiteralTable.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/OperandParser.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h
+ C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Writer.h
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/src/LiteralTable.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj
  C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/OPTable.h

@@ -10,7 +10,7 @@
 #include "../Include/Registers.h"
 
 Interpreter::Interpreter(ifstream &file, ofstream &outfile) : parser(Parser(file)), writer(Writer(outfile)),
-                                                              literalTable() {
+                                                              literalTable(writer) {
     locationCounter = -1;
 }
 //TODO
