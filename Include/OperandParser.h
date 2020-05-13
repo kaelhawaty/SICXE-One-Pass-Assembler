@@ -9,11 +9,11 @@
 namespace OperandParser {
     long long parseOperand(std ::string &operand,int &locationCounter,SymbolTable &symbolTable);
 
-    string &parseLiteral(string &operand);
+    string parseLiteral(string &operand);
 
     int hexCharToInt(unordered_map<char,int> &uh ,const char &hexChar);
     int hexStringToInt(const string &hexString);
    // long long int letterStringToll(const char letterChar);
-    string &numToHexString(int num, int hexaBytes = 1);
+    string numToHexString(int num, int hexaBytes = 1);
 }
 #endif //SICXEONEPASSASSEMBLER_OPERANDPARSER_H

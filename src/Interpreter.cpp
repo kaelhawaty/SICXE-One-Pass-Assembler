@@ -111,7 +111,8 @@ void Interpreter::Assemble() {
                 locationCounter += literal.size()/2 + 1;
             } else if (arr[1] == "WORD") {
                 int size = atoll(arr[2].c_str()) ;
-                string literal = OperandParser::numToHexString(size,3);
+                string literal ;
+                literal= OperandParser::numToHexString(size,3);
                 writer->writeTextRecord(literal,locationCounter);
                 locationCounter += 4;
             } else if (arr[1] == "RESB") {
