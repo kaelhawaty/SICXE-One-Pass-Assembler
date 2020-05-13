@@ -9,20 +9,26 @@
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
 
+<<<<<<< Updated upstream
 Interpreter::Interpreter(ifstream &file) : parser(Parser(file)) {
+=======
+Interpreter::Interpreter(ifstream &file, ofstream &outfile) : parser(Parser(file)), writer(Writer(outfile)) {
+>>>>>>> Stashed changes
     locationCounter = -1;
 }
 
 //TODO
 int Interpreter::evaluateExpression(const string &operand) {
-    int address = 0 ,sign =1 ;
+    int address = 0, sign = 1;
     for (int i = 0; i < operand.size(); i++) {
         string temp = "";
-        if (operand[i] == '*'){address += sign * locationCounter;sign =1 ;}
-        else if (operand[i] == '-')sign *= -1;
+        if (operand[i] == '*') {
+            address += sign * locationCounter;
+            sign = 1;
+        } else if (operand[i] == '-')sign *= -1;
         else if (operand[i] == '+')sign *= 1; //IDK
         else {
-            while (i<operand.size()&& isalpha(operand[i])) {
+            while (i < operand.size() && isalpha(operand[i])) {
                 temp += operand[i];
                 i++;
             }
@@ -62,29 +68,37 @@ void Interpreter::Assemble() {
                 if (split != "")
                     r2 = Registers::getRegister(split);
                 cout << OPTable::getOpcode(arr[1]) << ' ' << r1 << ' ' << r2 << '\n';
-                //Writer.appendToTextRecord(//ToDo);
-                //writer(OperandParser::numToHexString(OPTable::getOpcode(arr[1])));
-                //writer(OperandParser::numToHexString(r1));
-                //writer(OperandParser::numToHexString(r2));
+                string str = "";
+                str += OperandParser::numToHexString(OPTable::getOpcode(arr[1]),2);
+                str += OperandParser::numToHexString(r1);
+                if (r2)str += OperandParser::numToHexString(r2);
+                else str += "0";
+                writer.writeTextRecord(str, locationCounter);
                 locationCounter += 2;
             } else {
-                int byte1 = (OPTable::getOpcode(arr[1]) << 2) |
-                            (addressingType == AdressingType::IMMEDIATE ? 2 : (addressingType == AdressingType::INDIRECT
-                                                                               ? 1 : 3));
+                int byte1 = OPTable::getOpcode(arr[1]);
+                byte1 |= addressingType == AdressingType::IMMEDIATE ? 1 : (addressingType == AdressingType::INDIRECT
+                                                                           ? 2 : 3);
                 int byte2 = 0;
                 if (addressingType == ::AdressingType::INDEXED) {
                     byte2 = 1;
                 }
-                byte2 <<= 4;
+                byte2 <<= 3;
                 if (format == Format::FORMAT3) {
                     byte2 |= 2;
                 } else {
                     byte2 |= 1;
                 }
-                cout << byte1 << ' ' << byte2 << ' ' << evaluateExpression(arr[2]);
-                //Writer.appendToTextRecord(//ToDo);
-                //writer(OperandParser::numToHexString(byte1));
-                //writer(OperandParser::numToHexString(byte2));
+                //cout << byte1 << ' ' << byte2 << ' ' << evaluateExpression(arr[2]);
+                string str = OperandParser::numToHexString(byte1,2);
+                str += OperandParser::numToHexString(byte2);
+                int x;
+                //arr[2]-locationCounter;
+                if (isalpha(arr[2][0]))x = symbolTable.get(arr[2]);
+                else x = std::atoi(arr[2].c_str());
+                x -= locationCounter;
+                str += OperandParser::numToHexString(x, 3);
+                writer.writeTextRecord(str, locationCounter);
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;
             }
         } else {
@@ -94,7 +108,11 @@ void Interpreter::Assemble() {
                 }
                 //TODO EDIT WHEN WRITER CONSTRUCTOR EDITED
                 locationCounter = OperandParser::hexStringToInt(arr[2]);
+<<<<<<< Updated upstream
                 writer = new Writer(locationCounter, arr[0]);
+=======
+                writer.createHeader(locationCounter, arr[2]);
+>>>>>>> Stashed changes
             } else if (arr[1] == "END") {
                 writer->writeEndRecord();
                 return;
@@ -104,8 +122,9 @@ void Interpreter::Assemble() {
                 literalTable.organize(locationCounter);
             } else if (arr[1] == "EQU") {
                 int address = OperandParser::parseOperand(arr[2], locationCounter, symbolTable);
-                symbolTable.define(arr[0],address);
+                symbolTable.define(arr[0], address);
             } else if (arr[1] == "BYTE") {
+<<<<<<< Updated upstream
                string literal = OperandParser::parseLiteral(arr[2]) ;
                 writer-> writeTextRecord(literal,locationCounter);
                 locationCounter += literal.size()/2 + 1;
@@ -114,6 +133,16 @@ void Interpreter::Assemble() {
                 string literal ;
                 literal= OperandParser::numToHexString(size,3);
                 writer->writeTextRecord(literal,locationCounter);
+=======
+                string literal = OperandParser::parseLiteral(arr[2]);
+                writer.writeTextRecord(literal, locationCounter);
+                locationCounter += literal.size() / 2 + 1;
+            } else if (arr[1] == "WORD") {
+                int size = atoll(arr[2].c_str());
+                string literal;
+                literal = OperandParser::numToHexString(size, 6);
+                writer.writeTextRecord(literal, locationCounter);
+>>>>>>> Stashed changes
                 locationCounter += 4;
             } else if (arr[1] == "RESB") {
                 int size = atoi(arr[2].c_str());

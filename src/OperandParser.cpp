@@ -51,7 +51,7 @@ string OperandParser::parseLiteral(string &operand) {
     }
     if (i != operand.size())throw runtime_error("Literal is not correctly formatted");
     if (isLetter) {
-        for (i = 0; i < newOperand.size(); i++)str += numToHexString((int) newOperand[i], 1);
+        for (i = 0; i < newOperand.size(); i++)str += numToHexString((int) newOperand[i], 2);
     } else return newOperand;
     return str;
 }
@@ -82,22 +82,17 @@ int OperandParser::hexStringToInt(const string &hexString) {
     return address;
 }
 
-/*
-//Size Overflown
-long long int OperandParser::letterStringToll(const char letterChar) {
-    return (long long) (letterChar);
-}
-*/
-string OperandParser::numToHexString(int num, int hexaBytes) {
+string OperandParser::numToHexString(int num, int halfBytes) {
     string str = "";
     int numTemp = 0, numTemp2 = 0;
-    for (int i = hexaBytes * 2; i > 0; i--) {
-        numTemp = num >> 4;
-        numTemp = numTemp<<4;
-        numTemp2 = num - numTemp;
-        if (numTemp2 > 9)str += 'A' + numTemp2-9;
-        else str += (char)((int)'0' + numTemp2);
-        num = numTemp>>4;
+    if(num<0)num+=(1<<12)-1;
+    for (int i = halfBytes; i > 0; i--) {
+        numTemp2 = num >> 4;
+        numTemp = numTemp2<<4;
+        numTemp = num - numTemp;
+        num = numTemp2;
+        if (numTemp > 9)str += 'A' + numTemp-10;
+        else str += (char)((int)'0' + numTemp);
     }
     if (num != 0)throw runtime_error("provided number needs more Bytes than specified");
     std::reverse(str.begin(), str.end());
