@@ -23,13 +23,15 @@ const unordered_map<string,array<Need, 3>> mp = {
         {"RESB",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"RESW",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
         {"BYTE",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
-        {"WORD",{Need::NEEDED, Need::NEEDED, Need::NEEDED}}
+        {"WORD",{Need::NEEDED, Need::NEEDED, Need::NEEDED}},
+        {"RSUB",{Need::OPTIONAL, Need::NEEDED, Need::FORBIDDEN}}
 };
 const unordered_set<string> isFormat2{
-    "ADDR", "CLEAR", "COMPR", "DIVR",
-    "MULR", "RMO", "SHIFTL", "SHIFTR",
-    "SUBR", "TIXR"
+        "ADDR", "CLEAR", "COMPR", "DIVR",
+        "MULR", "RMO", "SHIFTL", "SHIFTR",
+        "SUBR", "TIXR"
 };
+const regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+((\\s+[#@]?[a-zA-Z]\\w*(\\,[a-zA-Z]\\w*)?\\s*)|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
 Parser::Parser(std::ifstream& file) : file(file){
 }
 bool Parser::isComment(const std::string &line) {
@@ -37,7 +39,6 @@ bool Parser::isComment(const std::string &line) {
 }
 array<string, 3> Parser::parseLine(string& s){
     std::for_each(s.begin(), s.end(), [](char & c){c = ::toupper(c);});
-    regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+((\\s+[#@]?[a-zA-Z]\\w*(\\,[a-zA-Z]\\w*)?\\s*)|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
     if(!regex_match(s, e)){
         throw runtime_error("Unknown line!");
     }
@@ -50,7 +51,11 @@ array<string, 3> Parser::parseLine(string& s){
     if(result.size() == 1){
         arr = {"", result[0], ""};
     }else if(result.size() == 2){
-        arr = {"", result[0], result[1]};
+        if(result[1] == "RSUB"){
+            arr = {result[0], result[1], ""};
+        }else {
+            arr = {"", result[0], result[1]};
+        }
     }else{
         arr = {result[0], result[1], result[2]};
     }

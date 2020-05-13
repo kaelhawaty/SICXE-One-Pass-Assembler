@@ -87,15 +87,7 @@ void Interpreter::Assemble() {
             } else if (arr[1] == "LTROG") {
                 literalTable.organize(locationCounter);
             } else if (arr[1] == "EQU") {
-                //vector<string> operand = OperandParser::parseOperand(arr[2]);
-                int sign = 1, address =OperandParser::parseOperand(arr[2],locationCounter,symbolTable) ;
-                /*for (int i = 0; i < operand.size(); i++) {
-                    if (operand[i] == "*")address += sign * locationCounter;
-                    else if (operand[i] == "-")sign *= -1;
-                    else if (operand[i] == "+")sign *= 1; //IDK
-                    else
-                        address += symbolTable.get(operand[i]) * sign;
-                }*/
+                int address =OperandParser::parseOperand(arr[2],locationCounter,symbolTable) ;
                 symbolTable.define(arr[0], address);
             } else if (arr[1] == "BYTE") {
                 //
@@ -105,10 +97,10 @@ void Interpreter::Assemble() {
                 /*for (; i < arr[2].size(); i++) {
                     if (arr[2][i] != ' ' && arr[2][i] != '\'')newOperand += arr[2][i];
                 }*/
-                long long literall = -1;
-                //if(letterOrHex)literall =HexaToInt(newOperand);
-                //else literall = LetterToInt(newOperand);
-                //literalTable.addRequestToLiteral(literall, locationCounter);
+                long long literal = -1;
+                //if(letterOrHex)literal =HexaToInt(newOperand);
+                //else literal = LetterToInt(newOperand);
+                //Writer.append(literal);
                 symbolTable.define(arr[0], locationCounter);
                 locationCounter += newOperand.size() + 1;
             } else if (arr[1] == "RESB") {
@@ -116,8 +108,8 @@ void Interpreter::Assemble() {
                 symbolTable.define(arr[0], locationCounter);
                 locationCounter += size + 1;
             } else if (arr[1] == "WORD") {
-                long long literall = atoll(arr[2].c_str());
-                //literalTable.addRequestToLiteral(literall, locationCounter);
+                long long literal = atoll(arr[2].c_str());
+                //Writer.append(literal,3)
                 symbolTable.define(arr[0], locationCounter);
                 locationCounter += 4;
             } else if (arr[1] == "RESW") {
