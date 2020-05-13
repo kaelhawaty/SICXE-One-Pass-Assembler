@@ -5,8 +5,10 @@
 
 #include "../Include/LiteralTable.h"
 #include "../Include/OperandParser.h";
-LiteralTable:: LiteralTable() {
-    literalTable.clear();
+
+
+LiteralTable::LiteralTable(Writer &w) : writer(w) {
+
 }
 bool LiteralTable::containsLiteral(std::string literal) {
     if(literalTable.count(literal)){
@@ -40,7 +42,7 @@ void LiteralTable:: organize(int& address) {
         literalTable[entry.first] = address;
         int cnt = getCountBytes(entry.first);
         for(int x : entry.second){
-            //parser.writeTextRecord(address, cnt, x);
+            writer.writeTextRecord(OperandParser::numToHexString(x, 3), address-x);
         }
         address += cnt;
     }

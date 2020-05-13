@@ -9,7 +9,9 @@
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
 
-Interpreter::Interpreter(ifstream &file, ofstream& outfile) : parser(Parser(file)), writer(Writer(outfile)) {
+Interpreter::Interpreter(ifstream &file, ofstream& outfile) : parser(Parser(file)), writer(Writer(outfile)),
+                                                              literalTable(
+                                                                      writer, <#initializer#>) {
     locationCounter = -1;
 }
 

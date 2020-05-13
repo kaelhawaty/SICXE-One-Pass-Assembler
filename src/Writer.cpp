@@ -12,6 +12,7 @@ Writer::Writer(ofstream& file) : fs(file){
 void Writer::createHeader(int start, const std::string &name) {
     startOfProgram = start;
     programName = name;
+    record = "";
     startOfRecord = curPos = start;
     lengthOfProgram=0;
     fs << "H";
@@ -32,8 +33,7 @@ void Writer:: cutText(int newStart) {
     fs << setfill('0') << setw(6) << hex << startOfRecord;
     fs << setfill('0') << setw(6) << hex << curPos-startOfRecord;
     startOfRecord = curPos =newStart;
-    for(auto i : record)
-        fs << i;
+    fs<<record;
     fs << "\n";
     record.clear();
 }
@@ -49,7 +49,7 @@ void Writer::writeTextRecord(const std::string& Hexa, int address) {
     if(address!=curPos)
         cutText(curPos);
     reserve(Hexa.size());
-    record.push_back(Hexa);
+    record+=Hexa;
     curPos+=Hexa.size();
     lengthOfProgram+=Hexa.size();
 }

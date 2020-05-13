@@ -6,13 +6,15 @@
 #define SICXEONEPASSASSEMBLER_LITERALTABLE_H
 #include <unordered_map>
 #include <forward_list>
+#include "../Include/Writer.h"
 
 class LiteralTable {
 private:
     std::unordered_map<std::string, int> literalTable;
     std::unordered_map<std::string, std::forward_list<int>> UnAssignedLiterals;
+    Writer &writer;
 public:
-    LiteralTable();
+    LiteralTable(Writer &w);
     bool containsLiteral(std::string literal);
     int getAddressOfLiteral(std::string literal);
     void addRequestToLiteral(std::string literal, int address);

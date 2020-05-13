@@ -14,7 +14,7 @@ class Writer{
 private:
     int startOfProgram, startOfRecord, curPos, lengthOfProgram;
     std::string programName;
-    std::vector<std::string>record;
+    std::string record;
     std::ofstream& fs;
 public:
     Writer(std::ofstream& file);

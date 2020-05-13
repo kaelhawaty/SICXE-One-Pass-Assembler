@@ -17,14 +17,13 @@ using namespace std;
 class Interpreter {
 private:
     Parser parser;
+    Writer writer;
     SymbolTable symbolTable;
     LiteralTable literalTable;
-    Writer writer;
     int locationCounter;
 public:
     Interpreter(ifstream& file, ofstream& outfile);
     void Assemble();
-
     int evaluateExpression(const string &operand);
 };
 
