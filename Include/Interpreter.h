@@ -12,16 +12,20 @@
 #include "LiteralTable.h"
 #include <vector>
 #include "OperandParser.h"
+#include "Writer.h"
 using namespace std;
 class Interpreter {
 private:
     Parser parser;
     SymbolTable symbolTable;
     LiteralTable literalTable;
+    Writer *writer;
     int locationCounter;
 public:
     Interpreter(ifstream& file);
     void Assemble();
+
+    int evaluateExpression(const string &operand);
 };
 
 
