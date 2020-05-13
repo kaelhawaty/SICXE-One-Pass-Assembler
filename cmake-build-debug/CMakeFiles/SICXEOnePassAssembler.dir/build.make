@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler
+CMAKE_SOURCE_DIR = C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SICXEOnePassAssembler.dir/depend.make
@@ -58,120 +58,120 @@ include CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\main.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\main.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\main.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\main.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\main.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\main.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\main.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\main.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\main.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\main.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\main.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj: ../src/Interpreter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Interpreter.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Interpreter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Interpreter.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Interpreter.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Interpreter.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Interpreter.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Interpreter.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Interpreter.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Interpreter.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Interpreter.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Interpreter.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Interpreter.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj: ../src/Parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Parser.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Parser.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Parser.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Parser.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Parser.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Parser.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Parser.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Parser.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Parser.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Parser.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Parser.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj: ../src/SymbolTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\SymbolTable.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\SymbolTable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\SymbolTable.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\SymbolTable.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\SymbolTable.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\SymbolTable.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\SymbolTable.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\SymbolTable.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\SymbolTable.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\SymbolTable.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\SymbolTable.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\SymbolTable.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj: ../src/LiteralTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\LiteralTable.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\LiteralTable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\LiteralTable.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\LiteralTable.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\LiteralTable.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\LiteralTable.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\LiteralTable.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\LiteralTable.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\LiteralTable.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\LiteralTable.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\LiteralTable.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\LiteralTable.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj: ../src/Registers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Registers.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Registers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Registers.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Registers.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Registers.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Registers.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Registers.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Registers.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Registers.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Registers.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Registers.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Registers.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj: ../src/OPTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\OPTable.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\OPTable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\OPTable.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\OPTable.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\OPTable.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\OPTable.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\OPTable.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\OPTable.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\OPTable.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\OPTable.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\OPTable.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\OPTable.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj: ../src/OperandParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\OperandParser.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\OperandParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\OperandParser.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\OperandParser.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\OperandParser.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\OperandParser.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\OperandParser.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\OperandParser.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\OperandParser.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\OperandParser.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\OperandParser.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\OperandParser.cpp.s
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj: CMakeFiles/SICXEOnePassAssembler.dir/flags.make
 CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj: ../src/Writer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Writer.cpp.obj -c C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Writer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj"
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SICXEOnePassAssembler.dir\src\Writer.cpp.obj -c C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Writer.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.i"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Writer.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Writer.cpp.i
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Writer.cpp > CMakeFiles\SICXEOnePassAssembler.dir\src\Writer.cpp.i
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.s"
-	C:\PROGRA~2\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\src\Writer.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Writer.cpp.s
+	C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\src\Writer.cpp -o CMakeFiles\SICXEOnePassAssembler.dir\src\Writer.cpp.s
 
 # Object files for target SICXEOnePassAssembler
 SICXEOnePassAssembler_OBJECTS = \
@@ -201,7 +201,7 @@ SICXEOnePassAssembler.exe: CMakeFiles/SICXEOnePassAssembler.dir/build.make
 SICXEOnePassAssembler.exe: CMakeFiles/SICXEOnePassAssembler.dir/linklibs.rsp
 SICXEOnePassAssembler.exe: CMakeFiles/SICXEOnePassAssembler.dir/objects1.rsp
 SICXEOnePassAssembler.exe: CMakeFiles/SICXEOnePassAssembler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable SICXEOnePassAssembler.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable SICXEOnePassAssembler.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SICXEOnePassAssembler.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,6 +214,6 @@ CMakeFiles/SICXEOnePassAssembler.dir/clean:
 .PHONY : CMakeFiles/SICXEOnePassAssembler.dir/clean
 
 CMakeFiles/SICXEOnePassAssembler.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug C:\Users\Karim\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles\SICXEOnePassAssembler.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug C:\Users\hazem\CLionProjects\SICXE-One-Pass-Assembler\cmake-build-debug\CMakeFiles\SICXEOnePassAssembler.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SICXEOnePassAssembler.dir/depend
 

@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/OPTable.h
 string
 -
@@ -24,6 +25,10 @@ unordered_map
 
 C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Parser.cpp
 array
+=======
+C:/Users/hazem/CLionProjects/SICXE-One-Pass-Assembler/Include/Writer.h
+iostream
+>>>>>>> f4865a76e09ac09d88216f70c58690833587fae6
 -
 regex
 -
@@ -43,4 +48,5 @@ C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Registers.h
 C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/OPTable.h
 ../Include/Parser.h
 C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Parser.h
+
 
