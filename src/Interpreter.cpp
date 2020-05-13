@@ -9,7 +9,7 @@
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
 
-Interpreter::Interpreter(ifstream& file) : parser(Parser(file)) {
+Interpreter::Interpreter(ifstream &file) : parser(Parser(file)) {
     locationCounter = -1;
 }
 
@@ -48,6 +48,9 @@ void Interpreter::Assemble() {
                     r2 = Registers::getRegister(split);
                 cout << OPTable::getOpcode(arr[1]) << ' ' << r1 << ' ' << r2 << '\n';
                 //Writer.appendToTextRecord(//ToDo);
+                //writer(OperandParser::numToHexString(OPTable::getOpcode(arr[1])));
+                //writer(OperandParser::numToHexString(r1));
+                //writer(OperandParser::numToHexString(r2));
                 locationCounter += 2;
             } else {
                 int byte1 = (OPTable::getOpcode(arr[1]) << 2) |
@@ -65,6 +68,8 @@ void Interpreter::Assemble() {
                 }
                 cout << byte1 << ' ' << byte2 << ' ' << evaluateExpression(arr[2]);
                 //Writer.appendToTextRecord(//ToDo);
+                //writer(OperandParser::numToHexString(byte1));
+                //writer(OperandParser::numToHexString(byte2));
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;
             }
         } else {
@@ -72,45 +77,50 @@ void Interpreter::Assemble() {
                 if (locationCounter != -1) {
                     throw runtime_error("Error the program includes more than one START directive");
                 }
-                locationCounter = 0;//TODO HexaToInt(arr[2])
-                //Writer.writeHeaderRecord(//TODO)
+                //TODO EDIT WHEN WRITER CONSTRUCTOR EDITED
+                locationCounter = OperandParser::hexStringToInt(arr[2]);
+                writer = new Writer(locationCounter, arr[0]);
             } else if (arr[1] == "END") {
-                //Writer.writeEndRecord(//ToDo)
+                writer->end();
                 return;
             } else if (arr[1] == "ORG") {
-                //locationCounter = HexaToInt(arr[2]);
+                locationCounter = symbolTable.get(arr[2]);
             } else if (arr[1] == "LTROG") {
                 literalTable.organize(locationCounter);
             } else if (arr[1] == "EQU") {
-                int address =OperandParser::parseOperand(arr[2],locationCounter,symbolTable) ;
-                symbolTable.define(arr[0], address);
+                int address = OperandParser::parseOperand(arr[2], locationCounter, symbolTable);
+                symbolTable.define(arr[0],address);
             } else if (arr[1] == "BYTE") {
-                //
-                int i = 1;
-                //bool letterOrHex = arr[2][0] == 'X';
-                string newOperand = "";
-                /*for (; i < arr[2].size(); i++) {
-                    if (arr[2][i] != ' ' && arr[2][i] != '\'')newOperand += arr[2][i];
+               /* bool isLetter = arr[2][0] == 'C';
+                long long literal;
+                int size = 0, i = 1;
+                while (arr[2][i] != '\'')i++;
+                for (; i < arr[2].size(); i++) {
+                    if (arr[2][i] == '\'')break;
+                    size++;
+                    if (isLetter) {
+                        literal = OperandParser::letterStringToll(arr[2][i]);
+                    } else {
+                        literal = OperandParser::hexStringToll("" + arr[2][i]);
+                    }
+                    writer->write(literal, 1);
                 }*/
-                long long literal = -1;
-                //if(letterOrHex)literal =HexaToInt(newOperand);
-                //else literal = LetterToInt(newOperand);
-                //Writer.append(literal);
-                symbolTable.define(arr[0], locationCounter);
-                locationCounter += newOperand.size() + 1;
+               string literal = OperandParser::parseLiteral(arr[2]) ;
+                writer-> write(literal);
+                locationCounter += literal.size()/2 + 1;
+            } else if (arr[1] == "WORD") {
+                int size = atoll(arr[2].c_str()) ;
+                string literal = OperandParser::numToHexString(size,3);
+                writer->write(literal);
+                locationCounter += 4;
             } else if (arr[1] == "RESB") {
                 int size = atoi(arr[2].c_str());
-                symbolTable.define(arr[0], locationCounter);
                 locationCounter += size + 1;
-            } else if (arr[1] == "WORD") {
-                long long literal = atoll(arr[2].c_str());
-                //Writer.append(literal,3)
-                symbolTable.define(arr[0], locationCounter);
-                locationCounter += 4;
+                writer->cutText();
             } else if (arr[1] == "RESW") {
                 int size = atoi(arr[2].c_str());
-                symbolTable.define(arr[0], locationCounter);
                 locationCounter += size * 3 + 1;
+                writer->cutText();
             }
 
         }
