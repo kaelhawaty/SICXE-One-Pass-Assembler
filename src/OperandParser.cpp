@@ -28,7 +28,7 @@ long long OperandParser::parseOperand(string &operand, int &locationCounter, Sym
     return address;
 }
 
-string &OperandParser::parseLiteral(string &operand) {
+string OperandParser::parseLiteral(string &operand) {
     string newOperand = "", str = "";
     int i = 0;
     bool start = false,isLetter =false;
@@ -88,15 +88,16 @@ long long int OperandParser::letterStringToll(const char letterChar) {
     return (long long) (letterChar);
 }
 */
-string &OperandParser::numToHexString(int num, int hexaBytes) {
+string OperandParser::numToHexString(int num, int hexaBytes) {
     string str = "";
     int numTemp = 0, numTemp2 = 0;
     for (int i = hexaBytes * 2; i > 0; i--) {
-        numTemp = num >> 8;
+        numTemp = num >> 4;
+        numTemp = numTemp<<4;
         numTemp2 = num - numTemp;
-        if (numTemp2 > 9)str += 'A' + numTemp2;
-        else str += '0' + numTemp2;
-        num = numTemp;
+        if (numTemp2 > 9)str += 'A' + numTemp2-9;
+        else str += (char)((int)'0' + numTemp2);
+        num = numTemp>>4;
     }
     if (num != 0)throw runtime_error("provided number needs more Bytes than specified");
     std::reverse(str.begin(), str.end());
