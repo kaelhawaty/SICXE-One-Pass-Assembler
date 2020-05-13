@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/assembler/src/Interpreter.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj"
-  "E:/assembler/src/LiteralTable.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj"
-  "E:/assembler/src/OPTable.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj"
-  "E:/assembler/src/OperandParser.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj"
-  "E:/assembler/src/Parser.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
-  "E:/assembler/src/Registers.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
-  "E:/assembler/src/SymbolTable.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"
-  "E:/assembler/src/Writer.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj"
-  "E:/assembler/src/main.cpp" "E:/assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Interpreter.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Interpreter.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/LiteralTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/LiteralTable.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/OPTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/OperandParser.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Parser.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Registers.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/SymbolTable.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Writer.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj"
+  "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/main.cpp" "C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
