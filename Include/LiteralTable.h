@@ -9,13 +9,13 @@
 
 class LiteralTable {
 private:
-    std::unordered_map<long long, int> literalTable;
-    std::unordered_map<long long, std::forward_list<int>> UnAssignedLiterals;
+    std::unordered_map<std::string, int> literalTable;
+    std::unordered_map<std::string, std::forward_list<int>> UnAssignedLiterals;
 public:
     LiteralTable();
-    bool containsLiteral(long long literal);
-    int getAddressOfLiteral(long long literal);
-    void addRequestToLiteral(long long literal, int address);
+    bool containsLiteral(std::string literal);
+    int getAddressOfLiteral(std::string literal);
+    void addRequestToLiteral(std::string literal, int address);
     void organize(int& locationCounter);
 
 };

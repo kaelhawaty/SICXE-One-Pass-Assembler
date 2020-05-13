@@ -65,6 +65,7 @@ void Writer::writeEndRecord() {
     sprintf(str, "%06X", startOfProgram);
     fs << str;
     fs.seekp(7,ios::beg);
+    sprintf(str, "%06X", startOfProgram);
     sprintf(str, "%06X", lengthOfProgram);
     fs << str;
     fs.close();

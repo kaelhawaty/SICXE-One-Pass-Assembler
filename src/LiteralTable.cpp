@@ -4,25 +4,25 @@
 //
 
 #include "../Include/LiteralTable.h"
-
+#include "../Include/OperandParser.h";
 LiteralTable:: LiteralTable() {
     literalTable.clear();
 }
-bool LiteralTable::containsLiteral(long long literal) {
+bool LiteralTable::containsLiteral(std::string literal) {
     if(literalTable.count(literal)){
         return true;
     }
     return false;
 }
 
-int LiteralTable::getAddressOfLiteral(long long literal){
+int LiteralTable::getAddressOfLiteral(std::string literal){
     if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal doesn't Exist");
     }
     return literalTable[literal];
 }
 
-void LiteralTable::addRequestToLiteral(long long literal, int address){
+void LiteralTable::addRequestToLiteral(std::string literal, int address){
     if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal exist");
     }
@@ -30,12 +30,9 @@ void LiteralTable::addRequestToLiteral(long long literal, int address){
     UnAssignedLiterals[literal].push_front(address);
 }
 
-int getCountBytes(long long literal){
-    int ans = 0;
-    while(literal >>= 8){
-        ans++;
-    }
-    return ans;
+int getCountBytes(std::string literal){
+    std:: string str = OperandParser::parseLiteral(literal);
+    return str.size()/2;
 }
 
 void LiteralTable:: organize(int& address) {
@@ -47,6 +44,5 @@ void LiteralTable:: organize(int& address) {
         }
         address += cnt;
     }
-
     UnAssignedLiterals.erase(UnAssignedLiterals.begin(), UnAssignedLiterals.end());
 }
