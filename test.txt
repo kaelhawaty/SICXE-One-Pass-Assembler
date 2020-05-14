@@ -1,4 +1,21 @@
-         START   0000
-omar     word    100
-         add     omar
-         END     omar
+PROG     START   0100
+BGN      LDT     #4
+         LDA     #0
+LOOP     JSUB    READCHAR
+         COMPR   A,T
+         JEQ     OUT
+         LDA     LENGTH
+         ADD     #1
+         STA     LENGTH
+         J       LOOP
+OUT      LDA     LENGTH
+
+READCHAR TD      INDEV
+         JEQ     READCHAR
+         RD      INDEV
+         RSUB
+
+INDEV    BYTE    X'F3'
+OUTDEV   BYTE    X'05'
+LENGTH   WORD    0
+         END     BGN

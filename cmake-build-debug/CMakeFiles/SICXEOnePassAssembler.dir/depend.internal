@@ -23,6 +23,7 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/OperandParser.h
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h
+ C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Writer.h
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/OperandParser.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/OPTable.h
@@ -33,7 +34,9 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Registers.h
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/Registers.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj
+ C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/OperandParser.h
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/SymbolTable.h
+ C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Writer.h
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/src/SymbolTable.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj
  C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/Include/Writer.h

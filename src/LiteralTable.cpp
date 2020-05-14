@@ -3,7 +3,7 @@
 //
 
 #include "../Include/LiteralTable.h"
-#include "../Include/OperandParser.h";
+#include "../Include/OperandParser.h"
 
 
 LiteralTable::LiteralTable(Writer &w) : writer(w) {

@@ -31,7 +31,7 @@ static bool isNumber(const string& s){
 
 void Interpreter::Assemble() {
     string line;
-    while ( parser || parser >> line) {
+    while (parser >> line) {
         if (parser.isComment(line)) {
             continue;
         }
@@ -46,6 +46,9 @@ void Interpreter::Assemble() {
             throw runtime_error("redefinition of Label " + arr[0]);
         } else if (arr[0] != "" && arr[0]!="EQU") {
             symbolTable.define(arr[0], locationCounter);
+            if(arr[0] == "READCHAR"){
+                cout << symbolTable.get("READCHAR");
+            }
         }
         if (OPTable::isOp(arr[1])) {
             if (format == Format::FORMAT2) {
@@ -150,11 +153,11 @@ void Interpreter::Assemble() {
             } else if (arr[1] == "RESB") {
                 int size = atoi(arr[2].c_str());
                 locationCounter += size;
-                writer.cutText(locationCounter);
+                writer.addLength(size);
             } else if (arr[1] == "RESW") {
                 int size = atoi(arr[2].c_str());
                 locationCounter += size * 3;
-                writer.cutText(locationCounter);
+                writer.addLength(size*3);
             }
         }
     }

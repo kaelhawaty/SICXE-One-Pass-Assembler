@@ -36,7 +36,7 @@ const unordered_set<string> isFormat2{
         "SUBR", "TIXR"
 };
 const regex e(
-        "^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,X\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
+        "^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,[AXLBSTF]\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
 
 Parser::Parser(std::ifstream &file) : file(file) {
 }
@@ -129,7 +129,7 @@ Format Parser::formatType(const string &operation) {
 
 AdressingType Parser::addressType(const string &operand) {
     if (operand.empty()) {
-        throw runtime_error("Operand is empty!");
+        return AdressingType::DIRECT;
     }
     bool flag = operand.find(",") != string::npos;
     if ((operand[0] == '#' || operand[0] == '@') && flag) {

@@ -22,6 +22,7 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/OPTable.cpp.obj: ../src/OPTable.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj: ../Include/OperandParser.h
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj: ../Include/SymbolTable.h
+CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj: ../Include/Writer.h
 CMakeFiles/SICXEOnePassAssembler.dir/src/OperandParser.cpp.obj: ../src/OperandParser.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj: ../Include/OPTable.h
@@ -32,7 +33,9 @@ CMakeFiles/SICXEOnePassAssembler.dir/src/Parser.cpp.obj: ../src/Parser.cpp
 CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj: ../Include/Registers.h
 CMakeFiles/SICXEOnePassAssembler.dir/src/Registers.cpp.obj: ../src/Registers.cpp
 
+CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj: ../Include/OperandParser.h
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj: ../Include/SymbolTable.h
+CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj: ../Include/Writer.h
 CMakeFiles/SICXEOnePassAssembler.dir/src/SymbolTable.cpp.obj: ../src/SymbolTable.cpp
 
 CMakeFiles/SICXEOnePassAssembler.dir/src/Writer.cpp.obj: ../Include/Writer.h

@@ -23,6 +23,7 @@ public:
     void writeTextRecord(const std::string& Hexa, int address);
     void cutText(int newAddress);
     void reserve(int cnt);
+    void addLength(int cnt);
     void writeEndRecord();
 };
 

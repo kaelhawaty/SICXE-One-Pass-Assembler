@@ -19,7 +19,7 @@ void Writer::createHeader(int start, const std::string &name) {
     fs << programName;
     for(int i = programName.size(); i < 6; ++i)
         fs << ' ';
-    fs << "            \n";
+    fs << "^            \n";
 }
 void Writer::reserve(int cnt){
     if(curPos-startOfRecord+cnt>=MAX){
@@ -30,8 +30,8 @@ void Writer:: cutText(int newStart) {
     if(curPos==startOfRecord)
         return;
     fs << "T";
-    fs << setfill('0') << setw(6) << hex << startOfRecord;
-    fs << setfill('0') << setw(6) << hex << curPos-startOfRecord;
+    fs << setfill('0') << setw(6) << hex << startOfRecord << "^";
+    fs << setfill('0') << setw(2) << hex << (curPos-startOfRecord) << "^";
     startOfRecord = curPos =newStart;
     fs<<record;
     fs << "\n";
@@ -39,26 +39,29 @@ void Writer:: cutText(int newStart) {
 }
 
 void Writer::writeModificationRecord(int address){
-    cutText(curPos);
+    cutText(address);
     fs << "M";
     fs << setfill('0') << setw(6) << hex << address;
-    fs << "05";
+    fs << "^05";
     fs << "\n";
 }
 void Writer::writeTextRecord(const std::string& Hexa, int address) {
     if(address!=curPos)
-        cutText(curPos);
+        cutText(address);
     reserve(Hexa.size());
     record+=Hexa;
-    curPos+=Hexa.size();
-    lengthOfProgram+=Hexa.size();
+    curPos+=Hexa.size()/2;
+    lengthOfProgram+=Hexa.size()/2;
+}
+void Writer::addLength(int cnt) {
+    lengthOfProgram += cnt;
 }
 void Writer::writeEndRecord() {
     cutText(curPos);
     fs << "E";
     fs << setfill('0') << setw(6) << hex << startOfProgram;
-    fs.seekp(7,ios::beg);
-    fs << setfill('0') << setw(6) << hex << startOfProgram;
-    fs << setfill('0') << setw(6) << hex << lengthOfProgram;
+    fs.seekp(8,ios::beg);
+    fs << setfill('0') << setw(6) << hex << startOfProgram << "^";
+    fs << setfill('0') << setw(6) << hex << lengthOfProgram-1;
 }
 

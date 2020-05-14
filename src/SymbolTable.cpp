@@ -17,7 +17,7 @@ void SymbolTable::request(const string& symbol, int location, int  firstHalfByte
     map[symbol].list.push_front(make_pair(location,firstHalfByte));
 }
 void SymbolTable::define(const string& symbol,int address){
-    if (map[symbol].list.empty())throw runtime_error("Symbol is already defined!");
+    if (map.count(symbol) && map[symbol].list.empty())throw runtime_error("Symbol is already defined!");
     map[symbol].address = address;
     auto itr = map[symbol].list.begin();
     while (itr != map[symbol].list.end()){
@@ -28,18 +28,21 @@ void SymbolTable::define(const string& symbol,int address){
         if(format == 4){
             bytesToWrite -= (itr->first+3);
             writer.writeTextRecord(OperandParser::numToHexString(bytesToWrite, format), itr->first+1);
+
         }else{
             writer.writeTextRecord(OperandParser::numToHexString(bytesToWrite, format), itr->first+1);
             writer.writeModificationRecord(itr->first+1);
         }
+        itr++;
     }
+    map[symbol].list.clear();
 };
 
 bool SymbolTable::contains(const string& symbol){
     if(map.find(symbol) == map.end()){
         return false;
     }
-    return  !map[symbol].list.empty();
+    return  map[symbol].list.empty();
 };
 
 
