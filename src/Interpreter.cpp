@@ -91,7 +91,7 @@ void Interpreter::Assemble() {
                     if(symbolTable.contains(arr[2])){
                         x = symbolTable.get(arr[2]);
                         if(format == Format::FORMAT4){
-                            writer.writeModificationRecord(locationCounter);
+                            writer.writeModificationRecord(locationCounter+1);
                         }
                     }else{
                         symbolTable.request(arr[2], locationCounter, byte & 0b1111);
@@ -108,7 +108,7 @@ void Interpreter::Assemble() {
                     if(literalTable.containsLiteral(str)){
                         x = literalTable.getAddressOfLiteral(arr[2]);
                         if(format == Format::FORMAT4){
-                            writer.writeModificationRecord(locationCounter);
+                            writer.writeModificationRecord(locationCounter+1);
                         }
                     }else{
                         literalTable.addRequestToLiteral(arr[2], locationCounter, byte & 0b1111);
