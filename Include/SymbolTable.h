@@ -26,6 +26,7 @@ public:
     void define(const string& symbol,int address);
     bool contains(const string& symbol);
     int get(const string& symbol);
+    void finish();
 };
 
 

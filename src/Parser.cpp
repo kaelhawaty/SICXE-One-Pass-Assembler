@@ -17,6 +17,7 @@ using namespace std;
 enum class Need {
     OPTIONAL, NEEDED, FORBIDDEN
 };
+
 const unordered_map<string, array<Need, 3>> mp = {
         {"END",   {Need::FORBIDDEN, Need::NEEDED,   Need::OPTIONAL}},
         {"ORG",   {Need::FORBIDDEN, Need::NEEDED,   Need::OPTIONAL}},
@@ -35,8 +36,8 @@ const unordered_set<string> isFormat2{
         "MULR", "RMO", "SHIFTL", "SHIFTR",
         "SUBR", "TIXR"
 };
-const regex e(
-        "^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,[AXLBSTF]\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
+const regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,[AXLBSTF]\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
+const regex startRegex("^\\s*([a-zA-Z]\\w*\\s+)?START\\s+[A-F0-9]+\\s*$");
 
 Parser::Parser(std::ifstream &file) : file(file) {
 }
@@ -45,7 +46,9 @@ bool Parser::isComment(const std::string &line) {
     return line.find_first_not_of(' ') == string::npos || line[0] == '.';
 }
 
-static bool checkNotOpcodeorDirective(const string &s) {
+static bool checkNotOpcodeorDirective(string s) {
+    if(s[0]=='+')
+        s.erase(s.begin());
     return !OPTable::isOp(s) && mp.find(s) == mp.end();
 }
 
@@ -58,7 +61,7 @@ array<string, 3> Parser::parseLine(string &s) {
             c = ::toupper(c);
         }
     });
-    if (!regex_match(s, e)) {
+    if (!regex_match(s, e) && !regex_match(s, startRegex)) {
         throw runtime_error("Unknown line!");
     }
     vector<string> result;

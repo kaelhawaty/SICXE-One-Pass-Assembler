@@ -52,3 +52,10 @@ int SymbolTable::get(const string& symbol){
     }
     return map.at(symbol).address;
 }
+void SymbolTable::finish() {
+    for(auto entry : map){
+        if(!entry.second.list.empty()){
+            throw runtime_error("Symbol: "+entry.first+" is not defined");
+        }
+    }
+}

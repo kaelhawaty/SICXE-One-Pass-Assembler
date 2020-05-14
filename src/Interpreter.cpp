@@ -3,8 +3,6 @@
 //
 
 #include <array>
-#include <sstream>
-#include <iostream>
 #include <regex>
 #include "../Include/Interpreter.h"
 #include "../Include/OPTable.h"
@@ -46,9 +44,6 @@ void Interpreter::Assemble() {
             throw runtime_error("redefinition of Label " + arr[0]);
         } else if (arr[0] != "" && arr[0]!="EQU") {
             symbolTable.define(arr[0], locationCounter);
-            if(arr[0] == "READCHAR"){
-                cout << symbolTable.get("READCHAR");
-            }
         }
         if (OPTable::isOp(arr[1])) {
             if (format == Format::FORMAT2) {
@@ -85,10 +80,8 @@ void Interpreter::Assemble() {
                 } else {
                     byte |= 1;
                 }
-                //cout << byte1 << ' ' << byte2 << ' ' << evaluateExpression(arr[2]);
                 string str = OperandParser::numToHexString(byte,3);
                 int x;
-                //arr[2]-locationCounter;
                 if (isSymbol(arr[2])){
                     if(arr[2][0] == '#' || arr[2][0] == '@'){
                         arr[2].erase(0, 1);
@@ -121,6 +114,9 @@ void Interpreter::Assemble() {
                 str += OperandParser::numToHexString(x, ((format == Format::FORMAT3) ? 3 : 5));
                 writer.writeTextRecord(str, locationCounter);
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;
+                if(format == Format::FORMAT4){
+                    writer.writeModificationRecord(locationCounter);
+                }
             }
         } else {
             if (arr[1] == "START") {
@@ -131,7 +127,7 @@ void Interpreter::Assemble() {
                 writer.createHeader(locationCounter, arr[0]);
             } else if (arr[1] == "END") {
                 literalTable.organize(locationCounter);
-                // TODO Check undefined symbols
+                symbolTable.finish();
                 writer.writeEndRecord();
                 return;
             } else if (arr[1] == "ORG") {
