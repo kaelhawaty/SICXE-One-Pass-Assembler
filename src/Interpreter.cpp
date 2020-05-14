@@ -114,7 +114,13 @@ void Interpreter::Assemble() {
                         literalTable.addRequestToLiteral(arr[2], locationCounter, byte & 0b1111);
                         x = locationCounter + 3;
                     }
-                }else{
+                }else if(arr[2]=="*"){
+                    x=locationCounter+3;
+                    if(format==Format::FORMAT4){
+                        writer.writeModificationRecord(locationCounter+1);
+                    }
+                }
+                else{
                     throw runtime_error("Unknown operand!");
                 }
                 if(format == Format::FORMAT3 && (byte&2) != 0) {
