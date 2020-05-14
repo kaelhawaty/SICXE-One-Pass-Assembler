@@ -19,9 +19,15 @@ const unordered_map<string, int> table{
         {"TIXR", 0xB8}, {"WD", 0xDC}
 };
 
-int OPTable::getOpcode(const std::string &operation) {
+int OPTable::getOpcode(std::string operation) {
+    if(operation[0] == '+'){
+        operation.erase(operation.begin());
+    }
     return table.at(operation);
 }
-bool OPTable::isOp(const std::string &operation) {
+bool OPTable::isOp( std::string operation) {
+    if(operation[0] == '+'){
+        operation.erase(operation.begin());
+    }
     return table.find(operation) != table.end();
 }

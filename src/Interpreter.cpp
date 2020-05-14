@@ -117,7 +117,9 @@ void Interpreter::Assemble() {
                 }else{
                     throw runtime_error("Unknown operand!");
                 }
-                x -= locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                if(format == Format::FORMAT3) {
+                    x -= locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                }
                 str += OperandParser::numToHexString(x, ((format == Format::FORMAT3) ? 3 : 5));
                 writer.writeTextRecord(str, locationCounter);
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;

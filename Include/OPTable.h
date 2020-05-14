@@ -10,8 +10,8 @@
 #include <unordered_map>
 
 namespace OPTable {
-     bool isOp(const std::string& operation);
-     int getOpcode(const std::string& operation);
+     bool isOp(std::string operation);
+     int getOpcode(std::string operation);
 };
 
 
