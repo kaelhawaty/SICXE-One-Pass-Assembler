@@ -18,12 +18,20 @@ long long OperandParser::parseOperand(string &operand, int &locationCounter, Sym
             sign = 1;
         } else if (operand[i] == '-')sign *= -1;
         else if (operand[i] == '+')sign *= 1; //IDK
-        else {
+        else if(isalpha(operand[i])){
             while (i < operand.size() && isalpha(operand[i])) {
                 temp += operand[i];
                 i++;
             }
             address += symbolTable.get(temp) * sign;
+            sign=1;
+        }else if(isdigit(operand[i])){
+            while (i < operand.size() && isdigit(operand[i])) {
+                temp += operand[i];
+                i++;
+            }
+            address += std::atoi(temp.c_str()) * sign;
+            sign=1;
         }
     }
     return address;
