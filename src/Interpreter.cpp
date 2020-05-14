@@ -91,6 +91,9 @@ void Interpreter::Assemble() {
                     }
                     if(symbolTable.contains(arr[2])){
                         x = symbolTable.get(arr[2]);
+                        if(format == Format::FORMAT4){
+                            writer.writeModificationRecord(locationCounter);
+                        }
                     }else{
                         symbolTable.request(arr[2], locationCounter, byte & 0b1111);
                         x = locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
@@ -104,6 +107,9 @@ void Interpreter::Assemble() {
                     string str = OperandParser::parseLiteral(arr[2]);
                     if(literalTable.containsLiteral(str)){
                         x = literalTable.getAddressOfLiteral(arr[2]);
+                        if(format == Format::FORMAT4){
+                            writer.writeModificationRecord(locationCounter);
+                        }
                     }else{
                         literalTable.addRequestToLiteral(arr[2], locationCounter, byte & 0b1111);
                         x = locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
@@ -115,9 +121,6 @@ void Interpreter::Assemble() {
                 str += OperandParser::numToHexString(x, ((format == Format::FORMAT3) ? 3 : 5));
                 writer.writeTextRecord(str, locationCounter);
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;
-                if(format == Format::FORMAT4){
-                    writer.writeModificationRecord(locationCounter);
-                }
             }
         } else {
             if (arr[1] == "START") {
