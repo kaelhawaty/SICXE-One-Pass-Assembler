@@ -1,3 +1,106 @@
 PROG     START   0100
-         +LDA    #4
+BGN      JSUB    RDSTRING
+         LDS     #1
+         LDX     #0
+         LDT     LEN
+         SUBR    S,T
+OUTLOOP  STX     TEMP2
+         LDX     #0
+INLOOP   LDA     #STRING
+         ADDR    X,A
+         STA     P1
+         JSUB    SORT
+         ADDR    S,X
+         COMPR   X,T
+         JLT     INLOOP
+         LDX     TEMP2
+         ADDR    S,X
+         COMPR   X,T
+         JLT     OUTLOOP
+         ADDR    S,T
+         LDX     #0
+PRINT    LDCH    STRING,X
+         JSUB    WRITECHR
+         ADDR    S,X
+         COMPR   X,T
+         JLT     PRINT
+         J       *
+
+.SORT AND SWAP
+
+SWAP     LDCH    @P1
+         STCH    TEMP
+         LDCH    @P2
+         STCH    @P1
+         LDCH    TEMP
+         STCH    @P2
+         RSUB
+
+SORT     LDA     P1
+         ADD     #1
+         STA     P2
+         LDA     @P1
+         COMP    @P2
+         JLT     RETURN
+         JEQ     RETURN
+         RMO     L,A
+         STA     STACK
+         JSUB    SWAP
+         J       OUT
+RETURN   RSUB
+
+
+
+
+.FOR READING STRINGS
+
+
+READCHAR TD      =X'F3'
+         JEQ     READCHAR
+         RD      =X'F3'
+         RSUB
+         LTORG
+
+WRITECHR TD      OUTDEV
+         JEQ     WRITECHR
+         WD      OUTDEV
+         RSUB
+
+RDSTRING RMO     L,A
+         LDS     #1
+         STA     STACK
+         LDX     LEN
+         LDA     #0
+READ     JSUB    READCHAR
+         COMP    EOF
+         JEQ     OUT
+         STCH    STRING,X
+         ADDR    S,X
+         J       READ
+
+
+
+.FOR NESTED FUNCTIONS
+
+OUT      LDA     STACK
+         RMO     A,L
+         STX     LEN
+         RSUB
+
+
+
+
+
+
+
+OUTDEV   BYTE    X'05'
+EOF      WORD    4
+SPACE    WORD    32
+STACK    RESW    1
+LEN      WORD    0
+STRING   RESB    100
+P1       RESW    1
+P2       RESW    1
+TEMP     RESW    1
+TEMP2    RESW    1
          END     BGN

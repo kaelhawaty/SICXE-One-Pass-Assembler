@@ -115,10 +115,11 @@ void Interpreter::Assemble() {
                         x = locationCounter + 3;
                     }
                 }else if(arr[2]=="*"){
-                    x=locationCounter+3;
+                    x = locationCounter;
                     if(format==Format::FORMAT4){
                         writer.writeModificationRecord(locationCounter+1);
                     }
+                    byte -= (format == Format::FORMAT4) ? 0 : 2;
                 }
                 else{
                     throw runtime_error("Unknown operand!");
@@ -145,7 +146,7 @@ void Interpreter::Assemble() {
                 return;
             } else if (arr[1] == "ORG") {
                 locationCounter = symbolTable.get(arr[2]);
-            } else if (arr[1] == "LTROG") {
+            } else if (arr[1] == "LTORG") {
                 literalTable.organize(locationCounter);
             } else if (arr[1] == "EQU") {
                 int address = OperandParser::parseOperand(arr[2], locationCounter, symbolTable);
