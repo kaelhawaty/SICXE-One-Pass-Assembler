@@ -29,7 +29,8 @@ static bool isNumber(const string& s){
 
 void Interpreter::Assemble() {
     string line;
-    while (parser >> line) {
+    while (parser) {
+        parser >> line;
         if (parser.isComment(line)) {
             continue;
         }
