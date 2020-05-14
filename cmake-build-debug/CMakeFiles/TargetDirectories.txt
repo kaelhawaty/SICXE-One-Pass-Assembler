@@ -1,3 +1,0 @@
-C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/SICXEOnePassAssembler.dir
-C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Karim/CLionProjects/SICXE-One-Pass-Assembler/cmake-build-debug/CMakeFiles/rebuild_cache.dir
