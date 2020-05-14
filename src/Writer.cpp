@@ -30,8 +30,8 @@ void Writer:: cutText(int newStart) {
     if(curPos==startOfRecord)
         return;
     fs << "T";
-    fs << setfill('0') << setw(6) << hex << startOfRecord << "^";
-    fs << setfill('0') << setw(2) << hex << (curPos-startOfRecord) << "^";
+    fs << setfill('0') << setw(6) << hex << uppercase <<  startOfRecord << "^";
+    fs << setfill('0') << setw(2) << hex << uppercase << (curPos-startOfRecord) << "^";
     startOfRecord = curPos =newStart;
     fs<<record;
     fs << "\n";
@@ -41,7 +41,7 @@ void Writer:: cutText(int newStart) {
 void Writer::writeModificationRecord(int address){
     cutText(address);
     fs << "M";
-    fs << setfill('0') << setw(6) << hex << address;
+    fs << setfill('0') << setw(6) << hex << uppercase << address;
     fs << "^05";
     fs << "\n";
 }
@@ -59,9 +59,9 @@ void Writer::addLength(int cnt) {
 void Writer::writeEndRecord() {
     cutText(curPos);
     fs << "E";
-    fs << setfill('0') << setw(6) << hex << startOfProgram;
+    fs << setfill('0') << setw(6) << hex << uppercase << startOfProgram;
     fs.seekp(8,ios::beg);
-    fs << setfill('0') << setw(6) << hex << startOfProgram << "^";
-    fs << setfill('0') << setw(6) << hex << lengthOfProgram-1;
+    fs << setfill('0') << setw(6) << hex << uppercase << startOfProgram << "^";
+    fs << setfill('0') << setw(6) << hex << uppercase << lengthOfProgram-1;
 }
 
