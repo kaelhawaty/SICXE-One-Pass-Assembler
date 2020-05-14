@@ -1,4 +1,3 @@
-
 //
 // Created by Karim on 5/11/2020.
 //
@@ -10,41 +9,49 @@
 LiteralTable::LiteralTable(Writer &w) : writer(w) {
 
 }
-bool LiteralTable::containsLiteral(std::string literal) {
+bool LiteralTable::containsLiteral(const std::string& literal) {
     if(literalTable.count(literal)){
         return true;
     }
     return false;
 }
 
-int LiteralTable::getAddressOfLiteral(std::string literal){
+int LiteralTable::getAddressOfLiteral(const std::string& literal){
     if(!LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal doesn't Exist");
     }
     return literalTable[literal];
 }
 
-void LiteralTable::addRequestToLiteral(std::string literal, int address){
-    if(!LiteralTable::containsLiteral(literal)){
+void LiteralTable::addRequestToLiteral(const std::string& literal, int address, int firstHalfByte){
+    if(LiteralTable::containsLiteral(literal)){
         throw std::runtime_error("Literal exist");
     }
-
-    UnAssignedLiterals[literal].push_front(address);
+    UnAssignedLiterals[literal].push_front({address, firstHalfByte});
 }
 
-int getCountBytes(std::string literal){
-    std:: string str = OperandParser::parseLiteral(literal);
-    return str.size()/2;
-}
 
 void LiteralTable:: organize(int& address) {
-    for(auto entry : UnAssignedLiterals){
+    for(auto entry: UnAssignedLiterals){
         literalTable[entry.first] = address;
-        int cnt = getCountBytes(entry.first);
-        for(int x : entry.second){
-            writer.writeTextRecord(OperandParser::numToHexString(x, 3), address-x);
+        std::string str = OperandParser::parseLiteral(entry.first);
+        writer.writeTextRecord(str, address);
+        address += str.size()/2;
+    }
+    for(auto entry : UnAssignedLiterals){
+        for(auto x : entry.second){
+            int format = ((x.second)&1) ? 6 : 4;
+            int bytesToWrite = x.second;
+            bytesToWrite <<= (format-1)*4;
+            bytesToWrite |= literalTable[entry.first];
+            if(format == 4){
+                bytesToWrite -= (x.first+3);
+                writer.writeTextRecord(OperandParser::numToHexString(bytesToWrite, 4), x.first+1);
+            }else{
+                writer.writeTextRecord(OperandParser::numToHexString(bytesToWrite, 6), x.first+1);
+                writer.writeModificationRecord(x.first+1);
+            }
         }
-        address += cnt;
     }
     UnAssignedLiterals.erase(UnAssignedLiterals.begin(), UnAssignedLiterals.end());
 }

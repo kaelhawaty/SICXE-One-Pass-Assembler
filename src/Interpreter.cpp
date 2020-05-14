@@ -5,39 +5,33 @@
 #include <array>
 #include <sstream>
 #include <iostream>
+#include <regex>
 #include "../Include/Interpreter.h"
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
 
 Interpreter::Interpreter(ifstream &file, ofstream &outfile) : parser(Parser(file)), writer(Writer(outfile)),
-                                                              literalTable(writer) {
+                                                              literalTable(writer), symbolTable(writer) {
     locationCounter = -1;
 }
-//TODO
-int Interpreter::evaluateExpression(const string &operand) {
-    int address = 0, sign = 1;
-    for (int i = 0; i < operand.size(); i++) {
-        string temp = "";
-        if (operand[i] == '*') {
-            address += sign * locationCounter;
-            sign = 1;
-        } else if (operand[i] == '-')sign *= -1;
-        else if (operand[i] == '+')sign *= 1; //IDK
-        else {
-            while (i < operand.size() && isalpha(operand[i])) {
-                temp += operand[i];
-                i++;
-            }
-            address += symbolTable.get(temp) * sign;
-        }
-    }
+static bool isSymbol(const string& s){
+    regex e("^(([a-zA-Z]\\w*(\\,X\\w*)?\\s*)|([#@]?[a-zA-Z]\\w*\\s*))$");
+    return regex_match(s, e);
+}
 
-    return 0;
+static bool isLiteral(const string& s){
+    regex e("^(=[XWC]'\\w+')$");
+    return regex_match(s, e);
+}
+
+static bool isNumber(const string& s){
+    regex e("(#?\\d+)");
+    return regex_match(s, e);
 }
 
 void Interpreter::Assemble() {
     string line;
-    while (parser >> line) {
+    while ( parser || parser >> line) {
         if (parser.isComment(line)) {
             continue;
         }
@@ -50,7 +44,7 @@ void Interpreter::Assemble() {
         AdressingType addressingType = parser.addressType(arr[2]);
         if (symbolTable.contains(arr[0])) {
             throw runtime_error("redefinition of Label " + arr[0]);
-        } else if (arr[0] != "") {
+        } else if (arr[0] != "" && arr[0]!="EQU") {
             symbolTable.define(arr[0], locationCounter);
         }
         if (OPTable::isOp(arr[1])) {
@@ -63,37 +57,65 @@ void Interpreter::Assemble() {
                 st >> split;
                 if (split != "")
                     r2 = Registers::getRegister(split);
-                cout << OPTable::getOpcode(arr[1]) << ' ' << r1 << ' ' << r2 << '\n';
-                string str = "";
-                str += OperandParser::numToHexString(OPTable::getOpcode(arr[1]),2);
+                string str = OperandParser::numToHexString(OPTable::getOpcode(arr[1]),2);
                 str += OperandParser::numToHexString(r1);
                 if (r2)str += OperandParser::numToHexString(r2);
                 else str += "0";
                 writer.writeTextRecord(str, locationCounter);
                 locationCounter += 2;
             } else {
-                int byte1 = OPTable::getOpcode(arr[1]);
-                byte1 |= addressingType == AdressingType::IMMEDIATE ? 1 : (addressingType == AdressingType::INDIRECT
-                                                                           ? 2 : 3);
-                int byte2 = 0;
-                if (addressingType == ::AdressingType::INDEXED) {
-                    byte2 = 1;
+                int byte = OPTable::getOpcode(arr[1]);
+                byte |= addressingType == AdressingType::IMMEDIATE ? 1 : (addressingType == AdressingType::INDIRECT
+                                                                          ? 2 : 3);
+                if(arr[1]=="RSUB"){
+                    writer.writeTextRecord("4F0000", locationCounter);
+                    locationCounter += 3;
+                    continue;
                 }
-                byte2 <<= 3;
+                byte <<= 1;
+                if (addressingType == AdressingType::INDEXED) {
+                    byte |= 1;
+                }
+                byte <<= 3;
                 if (format == Format::FORMAT3) {
-                    byte2 |= 2;
+                    byte |= 2;
                 } else {
-                    byte2 |= 1;
+                    byte |= 1;
                 }
                 //cout << byte1 << ' ' << byte2 << ' ' << evaluateExpression(arr[2]);
-                string str = OperandParser::numToHexString(byte1,2);
-                str += OperandParser::numToHexString(byte2);
+                string str = OperandParser::numToHexString(byte,3);
                 int x;
                 //arr[2]-locationCounter;
-                if (isalpha(arr[2][0]))x = symbolTable.get(arr[2]);
-                else x = std::atoi(arr[2].c_str());
-                x -= locationCounter;
-                str += OperandParser::numToHexString(x, 3);
+                if (isSymbol(arr[2])){
+                    if(arr[2][0] == '#' || arr[2][0] == '@'){
+                        arr[2].erase(0, 1);
+                    }else if(addressingType == AdressingType::INDEXED){
+                        arr[2] = arr[2].substr(0, (int)arr[2].find(","));
+                    }
+                    if(symbolTable.contains(arr[2])){
+                        x = symbolTable.get(arr[2]);
+                    }else{
+                        symbolTable.request(arr[2], locationCounter, byte & 0b1111);
+                        x = locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                    }
+                }else if(isNumber(arr[2])){
+                    if(arr[2][0] == '#'){
+                        arr[2].erase(0, 1);
+                    }
+                    x = std::atoi(arr[2].c_str());
+                }else if(isLiteral(arr[2])){
+                    string str = OperandParser::parseLiteral(arr[2]);
+                    if(literalTable.containsLiteral(str)){
+                        x = literalTable.getAddressOfLiteral(arr[2]);
+                    }else{
+                        literalTable.addRequestToLiteral(arr[2], locationCounter, byte & 0b1111);
+                        x = locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                    }
+                }else{
+                    throw runtime_error("Unknown operand!");
+                }
+                x -= locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                str += OperandParser::numToHexString(x, ((format == Format::FORMAT3) ? 3 : 5));
                 writer.writeTextRecord(str, locationCounter);
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;
             }
@@ -102,10 +124,11 @@ void Interpreter::Assemble() {
                 if (locationCounter != -1) {
                     throw runtime_error("Error the program includes more than one START directive");
                 }
-                //TODO EDIT WHEN WRITER CONSTRUCTOR EDITED
                 locationCounter = OperandParser::hexStringToInt(arr[2]);
                 writer.createHeader(locationCounter, arr[0]);
             } else if (arr[1] == "END") {
+                literalTable.organize(locationCounter);
+                // TODO Check undefined symbols
                 writer.writeEndRecord();
                 return;
             } else if (arr[1] == "ORG") {
@@ -116,25 +139,23 @@ void Interpreter::Assemble() {
                 int address = OperandParser::parseOperand(arr[2], locationCounter, symbolTable);
                 symbolTable.define(arr[0], address);
             } else if (arr[1] == "BYTE") {
-               string literal = OperandParser::parseLiteral(arr[2]) ;
+                string literal = OperandParser::parseLiteral(arr[2]) ;
                 writer.writeTextRecord(literal,locationCounter);
-                locationCounter += literal.size()/2 + 1;
+                locationCounter += literal.size()/2;
             } else if (arr[1] == "WORD") {
-                int size = atoll(arr[2].c_str()) ;
-                string literal ;
-                literal= OperandParser::numToHexString(size,3);
+                int size = atoi(arr[2].c_str());
+                string literal = OperandParser::numToHexString(size,6);
                 writer.writeTextRecord(literal,locationCounter);
-                locationCounter += 4;
+                locationCounter += 3;
             } else if (arr[1] == "RESB") {
                 int size = atoi(arr[2].c_str());
-                locationCounter += size + 1;
+                locationCounter += size;
                 writer.cutText(locationCounter);
             } else if (arr[1] == "RESW") {
                 int size = atoi(arr[2].c_str());
-                locationCounter += size * 3 + 1;
+                locationCounter += size * 3;
                 writer.cutText(locationCounter);
             }
-
         }
     }
     throw runtime_error("program doesn't include END directive");

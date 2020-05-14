@@ -36,7 +36,7 @@ const unordered_set<string> isFormat2{
         "SUBR", "TIXR"
 };
 const regex e(
-        "^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+((\\s+[#@]?[a-zA-Z]\\w*(\\,[a-zA-Z]\\w*)?\\s*)|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
+        "^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,X\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+#?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
 
 Parser::Parser(std::ifstream &file) : file(file) {
 }

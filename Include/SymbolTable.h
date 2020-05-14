@@ -8,21 +8,24 @@
 #include <forward_list>
 #include <string>
 #include <ostream>
+#include "../Include/Writer.h"
 using namespace std;
-struct symbolentry{
-    bool found;
-    int address;
-    int format;
-    forward_list<pair<int,int>>list;
-};
 class SymbolTable {
+private:
+    struct SymbolEntry{
+        int address;
+        // Address to be modified, first half byte
+        forward_list<pair<int,int>>list;
+    };
+    unordered_map<string , SymbolEntry> map;
+    Writer& writer;
+
 public:
- unordered_map<string , symbolentry> map;
- SymbolTable();
- void request(const string& symbol,int location,int format);
- void define(const string& symbol,int address);
- bool contains(const string& symbol);
- int get(const string& symbol);
+    SymbolTable(Writer& w);
+    void request(const string& symbol, int location, int firstHalfByte);
+    void define(const string& symbol,int address);
+    bool contains(const string& symbol);
+    int get(const string& symbol);
 };
 
 

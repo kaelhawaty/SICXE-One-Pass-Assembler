@@ -9,9 +9,9 @@
 namespace OperandParser {
     long long parseOperand(std ::string &operand,int &locationCounter,SymbolTable &symbolTable);
 
-    string parseLiteral(string &operand);
+    string parseLiteral(const string& operand);
 
-    int hexCharToInt(unordered_map<char,int> &uh ,const char &hexChar);
+    int hexCharToInt(const char &hexChar);
     int hexStringToInt(const string &hexString);
     string numToHexString(int num, int halfBytes = 1);
 }

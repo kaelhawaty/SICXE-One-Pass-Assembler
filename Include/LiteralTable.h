@@ -1,6 +1,3 @@
-//
-// Created by Karim on 5/11/2020.
-//
 
 #ifndef SICXEONEPASSASSEMBLER_LITERALTABLE_H
 #define SICXEONEPASSASSEMBLER_LITERALTABLE_H
@@ -10,18 +7,17 @@
 
 class LiteralTable {
 private:
+
     std::unordered_map<std::string, int> literalTable;
-    std::unordered_map<std::string, std::forward_list<int>> UnAssignedLiterals;
+    std::unordered_map<std::string, std::forward_list<std::pair<int, int>>> UnAssignedLiterals;
     Writer &writer;
 public:
     LiteralTable(Writer &w);
-    bool containsLiteral(std::string literal);
-    int getAddressOfLiteral(std::string literal);
-    void addRequestToLiteral(std::string literal, int address);
+    bool containsLiteral(const std::string& literal);
+    int getAddressOfLiteral(const std::string& literal);
+    void addRequestToLiteral(const std::string& literal, int address, int firstHalfByte);
     void organize(int& locationCounter);
-
 };
 
 
 #endif //SICXEONEPASSASSEMBLER_LITERALTABLE_H
-

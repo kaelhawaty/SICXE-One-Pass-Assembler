@@ -5,13 +5,14 @@
 #include <iostream>
 #include <bitset>
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
 
 long long OperandParser::parseOperand(string &operand, int &locationCounter, SymbolTable &symbolTable) {
     int address = 0, sign = 1;
     for (int i = 0; i < operand.size(); i++) {
-        string temp = "";
+        string temp;
         if (operand[i] == '*') {
             address += sign * locationCounter;
             sign = 1;
@@ -28,14 +29,17 @@ long long OperandParser::parseOperand(string &operand, int &locationCounter, Sym
     return address;
 }
 
-string OperandParser::parseLiteral(string &operand) {
-    string newOperand = "", str = "";
+string OperandParser::parseLiteral(const string &operand) {
+    string newOperand, str;
     int i = 0;
-    bool start = false,isLetter =false;
+    bool start = false,isLetter =false, isInt = false;
     if (operand[i] == '=')i++;
     while(i<operand.size()&&operand[i]==' ')i++;
     if (operand[i] == 'C') {
         isLetter = true;
+        i++;
+    }else if(operand[i]=='W'){
+        isInt = true;
         i++;
     }
     while(i<operand.size()&&operand[i]==' ')i++;
@@ -52,40 +56,34 @@ string OperandParser::parseLiteral(string &operand) {
     if (i != operand.size())throw runtime_error("Literal is not correctly formatted");
     if (isLetter) {
         for (i = 0; i < newOperand.size(); i++)str += numToHexString((int) newOperand[i], 2);
-    } else return newOperand;
+    } else if(isInt){
+        int n = atoi(newOperand.c_str());
+        int halfbytes = (int)ceil(log2(n));
+        halfbytes = halfbytes/4*4 + (halfbytes%4 != 0);
+        return numToHexString(n, halfbytes);
+    }else{
+        return newOperand;
+    }
     return str;
 }
 
-int OperandParser::hexCharToInt(unordered_map<char, int> &uh, const char &hexChar) {
-    int address = 0;
-    if (isalpha(hexChar)) {
-        address = uh[hexChar];
-    } else {
-        address = hexChar - '0';
-    }
-    return address;
+int OperandParser::hexCharToInt(const char &hexChar) {
+    return (isalpha(hexChar) ? (hexChar - 'A') : (hexChar - '0'));
 }
 
 int OperandParser::hexStringToInt(const string &hexString) {
     int address = 0;
-    unordered_map<char, int> uh;
-    uh.insert(make_pair('A', 10));
-    uh.insert(make_pair('B', 11));
-    uh.insert(make_pair('C', 12));
-    uh.insert(make_pair('D', 13));
-    uh.insert(make_pair('E', 14));
-    uh.insert(make_pair('F', 15));
     for (int i = 0; i < hexString.size(); i++) {
-        address = address << 8;
-        address += hexCharToInt(uh, hexString[i]);
+        address |= hexCharToInt(hexString[i]);
+        address <<= 4;
     }
     return address;
 }
 
 string OperandParser::numToHexString(int num, int halfBytes) {
-    string str = "";
+    string str;
     int numTemp = 0, numTemp2 = 0;
-    if(num<0)num+=(1<<12)-1;
+    if(num<0)num+=(1<<12);
     for (int i = halfBytes; i > 0; i--) {
         numTemp2 = num >> 4;
         numTemp = numTemp2<<4;
