@@ -81,7 +81,6 @@ void Interpreter::Assemble() {
                 } else {
                     byte |= 1;
                 }
-                string str = OperandParser::numToHexString(byte,3);
                 int x;
                 if (isSymbol(arr[2])){
                     if(arr[2][0] == '#' || arr[2][0] == '@'){
@@ -96,13 +95,14 @@ void Interpreter::Assemble() {
                         }
                     }else{
                         symbolTable.request(arr[2], locationCounter, byte & 0b1111);
-                        x = locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                        x = locationCounter + 3;
                     }
                 }else if(isNumber(arr[2])){
                     if(arr[2][0] == '#'){
                         arr[2].erase(0, 1);
                     }
                     x = std::atoi(arr[2].c_str());
+                    byte -= (format == Format::FORMAT4) ? 0 : 2;
                 }else if(isLiteral(arr[2])){
                     string str = OperandParser::parseLiteral(arr[2]);
                     if(literalTable.containsLiteral(str)){
@@ -112,14 +112,15 @@ void Interpreter::Assemble() {
                         }
                     }else{
                         literalTable.addRequestToLiteral(arr[2], locationCounter, byte & 0b1111);
-                        x = locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                        x = locationCounter + 3;
                     }
                 }else{
                     throw runtime_error("Unknown operand!");
                 }
-                if(format == Format::FORMAT3) {
-                    x -= locationCounter + ((format == Format::FORMAT3) ? 3 : 4);
+                if(format == Format::FORMAT3 && (byte&2) != 0) {
+                    x -= locationCounter + 3;
                 }
+                string str = OperandParser::numToHexString(byte,3);
                 str += OperandParser::numToHexString(x, ((format == Format::FORMAT3) ? 3 : 5));
                 writer.writeTextRecord(str, locationCounter);
                 format == Format::FORMAT3 ? locationCounter += 3 : locationCounter += 4;
