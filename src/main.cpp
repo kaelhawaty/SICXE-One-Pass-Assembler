@@ -8,28 +8,24 @@
 using namespace std;
 
 int main() {
-    /* int x = 0;
-   Writer wr(x,"copy");
-   wr.write(347324,6);
-   wr.cutText();
-     wr.write(54655656,6);
-     wr.cutText();
-     wr.writeModificatinRecord(343,2);
-     wr.writeTextRecord(4343,4,47632746324);
-     wr.end();*/
+    string assem, s;
     try {
-        ifstream ifs("../test.txt");
-        ofstream out("../hi.txt");
+        cin >> assem >> s;
+        if(assem != "assembler"){
+            throw runtime_error("Command must start with 'assembler <source-file-name>'");
+        }
+        ifstream ifs(s+".txt");
+        ofstream out("objCode.txt");
         if(!ifs || !out){
-            cout << "BUGGED";
-            return 0;
+            throw runtime_error("I/O Exception: Couldn't open/create file");
         }
         Interpreter interpreter(ifs, out);
         interpreter.Assemble();
         ifs.close();
         out.close();
     }catch(exception& e){
-        cout << e.what();
+        ofstream err("err.txt");
+        err << e.what();
     }
     return 0;
 }
