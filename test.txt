@@ -1,5 +1,5 @@
 PROG     START   0100
-BGN      JSUB    RDSTRING
+BGN      +JSUB   RDSTRING
          LDS     #1
          LDX     #0
          LDT     LEN
@@ -55,11 +55,10 @@ RETURN   RSUB
 .FOR READING STRINGS
 
 
-READCHAR TD      =X'F3'
+READCHAR TD      INDEV
          JEQ     READCHAR
-         RD      =X'F3'
+         RD      INDEV
          RSUB
-         LTORG
 
 WRITECHR TD      OUTDEV
          JEQ     WRITECHR
@@ -93,6 +92,7 @@ OUT      LDA     STACK
 
 
 
+INDEV    BYTE    X'F3'
 OUTDEV   BYTE    X'05'
 EOF      WORD    4
 SPACE    WORD    32

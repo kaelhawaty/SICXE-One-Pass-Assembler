@@ -6,25 +6,53 @@
 #include <bitset>
 #include <algorithm>
 #include <cmath>
+#include <regex>
 
 using namespace std;
+bool OperandParser::isSymbol(const string& s){
+    regex e("^(([a-zA-Z]\\w*(\\,X\\w*)?\\s*)|([#@]?[a-zA-Z]\\w*\\s*))$");
+    return regex_match(s, e);
+}
+bool OperandParser::isExpression(const string& s){
+    regex e("(([@#]?[a-zA-Z]\\w*)|(\\*))\\s*[+-]\\s*(([a-zA-Z]\\w*)|\\d+)");
+    return regex_match(s, e);
+}
+bool OperandParser::isLiteral(const string& s){
+    regex e("^(=[XWC]'\\w+')$");
+    return regex_match(s, e);
+}
 
-long long OperandParser::parseOperand(string &operand, int &locationCounter, SymbolTable &symbolTable) {
-    int address = 0, sign = 1;
+bool OperandParser::isNumber(const string& s){
+    regex e("(([@#]?\\d+))");
+    return regex_match(s, e);
+}
+int OperandParser::parseOperand(string operand, int& locationCounter, SymbolTable &symbolTable) {
+    int address = 0, sign = 1, numPositiveSymbols = 0;
     for (int i = 0; i < operand.size(); i++) {
+        if(operand[i] == '#' || operand[i] == '@'){
+            continue;
+        }
         string temp;
         if (operand[i] == '*') {
             address += sign * locationCounter;
             sign = 1;
-        } else if (operand[i] == '-')sign *= -1;
-        else if (operand[i] == '+')sign *= 1; //IDK
+        } else if (operand[i] == '-'){
+            sign = -1;
+        }
+        else if (operand[i] == '+'){
+            sign = 1; //IDK
+        }
         else if(isalpha(operand[i])){
             while (i < operand.size() && isalpha(operand[i])) {
                 temp += operand[i];
                 i++;
             }
+            if(sign == 1){
+                numPositiveSymbols++;
+            }
             address += symbolTable.get(temp) * sign;
             sign=1;
+            i--;
         }else if(isdigit(operand[i])){
             while (i < operand.size() && isdigit(operand[i])) {
                 temp += operand[i];
@@ -32,7 +60,11 @@ long long OperandParser::parseOperand(string &operand, int &locationCounter, Sym
             }
             address += std::atoi(temp.c_str()) * sign;
             sign=1;
+            i--;
         }
+    }
+    if(numPositiveSymbols == 2){
+        throw runtime_error("Expression is not relative number of positive symbols is bigger than negative symbols!");
     }
     return address;
 }

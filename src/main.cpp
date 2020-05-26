@@ -9,6 +9,7 @@ using namespace std;
 
 int main() {
     string assem, s;
+    ofstream err("err.txt");
     try {
         cin >> assem >> s;
         if(assem != "assembler"){
@@ -24,7 +25,6 @@ int main() {
         ifs.close();
         out.close();
     }catch(exception& e){
-        ofstream err("err.txt");
         err << e.what();
     }
     return 0;

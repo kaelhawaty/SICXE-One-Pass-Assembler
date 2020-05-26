@@ -36,7 +36,7 @@ const unordered_set<string> isFormat2{
         "MULR", "RMO", "SHIFTL", "SHIFTR",
         "SUBR", "TIXR"
 };
-const regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,[AXLBSTF]\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+[@#]?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+'))?\\s*$");
+const regex e("^\\s*([a-zA-Z]\\w*\\s+)?\\+?\\w+(((\\s+[a-zA-Z]\\w*(\\,[AXLBSTF]\\w*)?\\s*)|(\\s+[#@]?[a-zA-Z]\\w*\\s*))|(\\s+[@#]?\\d+)|(\\s+\\*)|(\\s+=?[XWC]'\\w+')|(\\s+(([@#]?[a-zA-Z]\\w*)|(\\s+\\*))\\s*[+-]\\s*(([a-zA-Z]\\w*)|\\d+)))?\\s*$");
 const regex startRegex("^\\s*([a-zA-Z]\\w*\\s+)?START\\s+[A-F0-9]+\\s*$");
 
 Parser::Parser(std::ifstream &file) : file(file) {

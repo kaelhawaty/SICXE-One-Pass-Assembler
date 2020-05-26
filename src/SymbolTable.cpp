@@ -47,10 +47,14 @@ bool SymbolTable::contains(const string& symbol){
 
 
 int SymbolTable::get(const string& symbol){
-    if(!map.at(symbol).list.empty()){
+    try {
+        if( !map.count(symbol)|| !map.at(symbol).list.empty()){
+            throw runtime_error("Symbol is not defined!");
+        }
+        return map.at(symbol).address;
+    }catch(exception& e){
         throw runtime_error("Symbol is not defined!");
     }
-    return map.at(symbol).address;
 }
 void SymbolTable::finish() {
     for(auto entry : map){

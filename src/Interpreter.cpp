@@ -3,7 +3,7 @@
 //
 
 #include <array>
-#include <regex>
+#include <sstream>
 #include "../Include/Interpreter.h"
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
@@ -12,20 +12,7 @@ Interpreter::Interpreter(ifstream &file, ofstream &outfile) : parser(Parser(file
                                                               literalTable(writer), symbolTable(writer) {
     locationCounter = -1;
 }
-static bool isSymbol(const string& s){
-    regex e("^(([a-zA-Z]\\w*(\\,X\\w*)?\\s*)|([#@]?[a-zA-Z]\\w*\\s*))$");
-    return regex_match(s, e);
-}
 
-static bool isLiteral(const string& s){
-    regex e("^(=[XWC]'\\w+')$");
-    return regex_match(s, e);
-}
-
-static bool isNumber(const string& s){
-    regex e("(([@#]?\\d+))");
-    return regex_match(s, e);
-}
 
 void Interpreter::Assemble() {
     string line;
@@ -82,7 +69,7 @@ void Interpreter::Assemble() {
                     byte |= 1;
                 }
                 int x;
-                if (isSymbol(arr[2])){
+                if (OperandParser::isSymbol(arr[2])){
                     if(arr[2][0] == '#' || arr[2][0] == '@'){
                         arr[2].erase(0, 1);
                     }else if(addressingType == AdressingType::INDEXED){
@@ -97,13 +84,13 @@ void Interpreter::Assemble() {
                         symbolTable.request(arr[2], locationCounter, byte & 0b1111);
                         x = locationCounter + 3;
                     }
-                }else if(isNumber(arr[2])){
+                }else if(OperandParser::isNumber(arr[2])){
                     if(arr[2][0] == '#'){
                         arr[2].erase(0, 1);
                     }
                     x = std::atoi(arr[2].c_str());
                     byte -= (format == Format::FORMAT4) ? 0 : 2;
-                }else if(isLiteral(arr[2])){
+                }else if(OperandParser::isLiteral(arr[2])){
                     string str = OperandParser::parseLiteral(arr[2]);
                     if(literalTable.containsLiteral(str)){
                         x = literalTable.getAddressOfLiteral(arr[2]);
@@ -120,6 +107,14 @@ void Interpreter::Assemble() {
                         writer.writeModificationRecord(locationCounter+1);
                     }
                     byte -= (format == Format::FORMAT4) ? 0 : 2;
+                }else if(OperandParser::isExpression(arr[2])){
+                    x = OperandParser::parseOperand(arr[2], locationCounter,symbolTable);
+                    if(format==Format::FORMAT4){
+                        if(x  < 0){
+                            throw runtime_error("Negative value for address in Expression");
+                        }
+                        writer.writeModificationRecord(locationCounter+1);
+                    }
                 }
                 else{
                     throw runtime_error("Unknown operand!");

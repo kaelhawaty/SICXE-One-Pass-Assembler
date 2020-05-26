@@ -7,12 +7,22 @@
 #include <vector>
 #include "SymbolTable.h"
 namespace OperandParser {
-    long long parseOperand(std ::string &operand,int &locationCounter,SymbolTable &symbolTable);
+    bool isSymbol(const string& s);
+
+    bool isExpression(const string& s);
+
+    bool isLiteral(const string& s);
+
+    bool isNumber(const string& s);
+
+    int parseOperand(std ::string operand, int& locationCounter,SymbolTable &symbolTable);
 
     string parseLiteral(const string& operand);
 
     int hexCharToInt(const char &hexChar);
+
     int hexStringToInt(const string &hexString);
+
     string numToHexString(int num, int halfBytes = 1);
 }
 #endif //SICXEONEPASSASSEMBLER_OPERANDPARSER_H
