@@ -23,7 +23,7 @@ static bool isLiteral(const string& s){
 }
 
 static bool isNumber(const string& s){
-    regex e("(#?\\d+)");
+    regex e("(([@#]?\\d+))");
     return regex_match(s, e);
 }
 
