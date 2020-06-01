@@ -6,7 +6,7 @@
 #include "../Include/Writer.h"
 
 using namespace std;
-
+int Line = 0;
 int main() {
     string assem, s;
     ofstream err("err.txt");
@@ -26,6 +26,7 @@ int main() {
         out.close();
     }catch(exception& e){
         err << e.what();
+        err << " At Line " << Line;
     }
     return 0;
 }

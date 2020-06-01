@@ -7,7 +7,7 @@
 #include "../Include/Interpreter.h"
 #include "../Include/OPTable.h"
 #include "../Include/Registers.h"
-
+extern int Line;
 Interpreter::Interpreter(ifstream &file, ofstream &outfile) : parser(Parser(file)), writer(Writer(outfile)),
                                                               literalTable(writer), symbolTable(writer) {
     locationCounter = -1;
@@ -18,6 +18,7 @@ void Interpreter::Assemble() {
     string line;
     while (parser) {
         parser >> line;
+        Line++;
         if (parser.isComment(line)) {
             continue;
         }
